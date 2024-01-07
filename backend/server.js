@@ -1,16 +1,18 @@
-require('dotenv').config();
-
+const mysql = require('mysql');
+const cors = require('cors');
 const express = require('express');
 
 
 const app = express();
 
-app.use("/", (req,res)=>{
-    res.send("Server is Running!")
-})
+app.use(cors());
+app.use(express.static('public'));
 
-// listen port
-app.listen(process.env.PORT , () =>{
-    console.log(`Listening on port`, process.env.PORT);
-})
 
+app.get('/', (re,res)=>{
+
+    return res.json("From the BackEnd side")
+});
+
+const port = 8081;
+app.listen(port, () => console.log(`Listening on port ${port}`));
