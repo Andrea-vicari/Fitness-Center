@@ -1,9 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 import logo from './logo.svg';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+
 import './App.css';
 
-class App extends Component {
-  render() {
+
+
+const App = () => {
+  const [data, setData] = useState([])
+
+useEffect(()=> {
+  axios.get('https://mern-stack-gp2j.vercel.app/')
+  .then(res => setData(res.data))
+  .then(console.log(data))
+  .catch(err => console.log(err))
+}, [])
+
+
     return (
       <div className="App">
         <div className="App-header">
@@ -15,7 +29,7 @@ class App extends Component {
         </p>
       </div>
     );
-  }
+
 }
 
-export default App;
+export {App};

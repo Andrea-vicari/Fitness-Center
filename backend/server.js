@@ -1,6 +1,6 @@
 const cors = require('cors');
 const express = require('express');
-
+require ('dotenv').config();
 
 const app = express();
 
@@ -20,5 +20,5 @@ app.get('/', (re,res)=>{
     return res.json("From the BackEnd side works fine!!")
 });
 
-const port = 8081;
-app.listen(port, () => console.log(`Listening on port ${port}`));
+
+app.listen(process.env.PORT, () => console.log(`Listening on port ${process.env.PORT}`));
