@@ -6,7 +6,18 @@ const express = require('express');
 const app = express();
 
 app.use(cors());
-app.use(express.static('public'));
+
+app.use(cors(
+    {
+        origin: ["mern-stack-zeta.vercel.app"],
+        methods: ["POST", "GET"],
+        credentials: true
+    }
+));
+app.use(express.json())
+
+mongoose.connect('mongodb+srv://andreavicari77:<password>@mern-vercel.1iyqseq.mongodb.net/?retryWrites=true&w=majority');
+
 
 
 app.get('/', (re,res)=>{
