@@ -25,6 +25,6 @@ app.use((req, res, next)=>{
 
 app.use(express.json())
 
-app.use('/api/workouts', workoutsRoutes)
+// app.use('/api/workouts', workoutsRoutes)
 
 
