@@ -5,10 +5,7 @@ const {viewAllWorkouts} = require('../controllers/workoutController');
 
 const router = express.Router();
 
-router.get('/', (req, res)=> {
-    console.log(res)
-    res.json({mssg: "getting the ww"})
-});
+router.get('/', viewAllWorkouts);
 
 router.get('/:id', (req, res)=> {
     res.json({mssg: "getting the single id"})
