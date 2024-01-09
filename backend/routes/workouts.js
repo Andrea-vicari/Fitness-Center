@@ -8,7 +8,7 @@ const {
 const router = express.Router();
 
 router.get('/', (req, res)=> {
-    console.log(req.path, req.method)
+    console.log(res)
     res.json({mssg: "getting the ww"})
 });
 
