@@ -5,7 +5,17 @@ const mongoose = require('mongoose')
 
 const workoutsRoutes = require('./routes/workouts');
 
+
 const app = express();
+
+
+app.use(cors(
+    {
+        origin: ["https://mern-stack-gp2j.vercel.app/"],
+        methods: ["POST", "GET"],
+        credentials: true
+    }
+));
 
 mongoose.connect(process.env.MONGO_URI)
     .then(()=>{
