@@ -1,8 +1,6 @@
 const express = require('express');
 
-const {
-    createNewWorkOut
-} = require('../controllers/workoutController');
+const {createNewWorkOut} = require('../controllers/workoutController');
 
 
 const router = express.Router();
