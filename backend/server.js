@@ -32,10 +32,7 @@ app.get('/', (re,res)=>{
     return res.json("From the BackEnd side works fine Maybe!!")
 });
 
-app.use((req, res, next)=>{
-    console.log(req.path, req.method)
-    next()
-})
+
 
 app.use('/api/workouts', workoutsRoutes)
 
