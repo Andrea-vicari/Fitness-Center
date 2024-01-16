@@ -14,7 +14,7 @@ mongoose.connect(process.env.MONGO_URI);
 
 app.get('/', (req,res)=>{
 
-    return res.json("From the BackEnd side works fine Maybe!!")
+    return res.json("From the BackEnd side works fine!!")
 });
 
 
