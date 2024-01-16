@@ -33,7 +33,6 @@ app.get('/', (re,res)=>{
 });
 
 
-
 app.use('/api/workouts', workoutsRoutes)
 
 app.listen(process.env.PORT, () => console.log(`Listening on port ${process.env.PORT}`));
