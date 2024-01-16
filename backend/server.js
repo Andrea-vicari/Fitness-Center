@@ -7,24 +7,9 @@ const app = express();
 
 const workoutsRoutes = require('./routes/workouts');
 
-/*
-app.use(cors({
-    origin: ["https://mern-stack-gp2j.vercel.app/"],
-    methods: ["POST", "GET"],
-    credentials: true
-}));
-*/
-
 app.use(express.json())
 
-mongoose.connect(process.env.MONGO_URI)
-    .then(()=>{
-        app.listen(process.env.PORT, () => console.log(`Connected to DB and Listening on port ${process.env.PORT}`));
-    })
-    .catch((error)=>{
-        console.log(error)
-    })
-
+mongoose.connect(process.env.MONGO_URI);
 
 
 app.get('/', (re,res)=>{
