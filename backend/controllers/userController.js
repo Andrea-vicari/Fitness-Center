@@ -28,10 +28,10 @@ const getSingleUser = async (req, res)=> {
 // Create a NEW user: OK
 const createNewUser = async (req, res)=> {
 
-    const {UserName, email, Password} = req.body
+    const {UserName, email, password} = req.body
 
     try{
-        const user = await Users.create({UserName, email, Password})
+        const user = await Users.create({UserName, email, password})
         res.status(200).json(user)
     }
 
@@ -61,7 +61,7 @@ const deleteUser = async (req, res)=> {
 // Update a Single user: OK
 const updateUser = async (req, res)=> {
 
-    const {UserName, email, Password} = req.body
+    const {UserName, email, password} = req.body
 
     const { id } = req.params;
 
