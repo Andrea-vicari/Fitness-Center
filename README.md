@@ -1,5 +1,6 @@
 # Fitness Center Application
 Repo for Fitness Center React Application
+
 ### DONE:
 📌 NPM packages installed: cors express mongodb nodemon mongoose dotenv\
 📌 Setup a MONGODB cluster with User
@@ -23,11 +24,17 @@ Repo for Fitness Center React Application
 ### C.R.U.D operation test with POSTMAN (localhost:8081 => MongoDB LIVE)
  * Owner
  * Trainer
- * User Schema
- * 📌 WorkOut Schema => DONE ✨
+ *  WorkOut
+ * 📌 User DONE ✨
+
+### Example Response from /api/user
+[]
+
+### Screen from the LIVE MongoDB
+
 ### Notes
-* User SCHEMA: use of Crypto Node package
 * See if install also JWT token
+* See if try with React Native (Ask to Fabio)
 
 ### Technologies
 * Node.js
