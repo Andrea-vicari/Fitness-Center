@@ -11,19 +11,19 @@ Repo for Fitness Center React Application
  * Trainer
  * 📌 User  => DONE
  * 📌 WorkOut  => DONE
-====================
+====================\
 * Controllers
  * Owner
  * Trainer
  * 📌 User  => DONE
  * 📌 WorkOut  => DONE
-=====================
+=====================\
 * MongoDb SCHEMA
  * Owner Schema
  * Trainer Schema
  * 📌 User Schema => DONE
  * 📌 WorkOut Schema => DONE ✨ ADDED THE CRYPTO FUNC TO THE PASSWORD ✨
-====================
+====================\
 * C.R.U.D operation test with POSTMAN (localhost:8081 => MongoDB LIVE)
  * Owner
  * Trainer
