@@ -7,6 +7,10 @@ const workoutsSchema = new mongoose.Schema({
 
     },
     reps:{
+        type: String,
+        requred: true
+    },
+    rest:{
         type: Number,
         requred: true
     },

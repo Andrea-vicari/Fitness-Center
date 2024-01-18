@@ -1,15 +1,40 @@
-# EXPRESS SERVER DEPLOYED ON VERCEL
-Express server deployed on Vercel
-Deployed only the Backend folder
+# Fitness Center Application
+Repo for Fitness Center React Application
+========================================
 
-### RECAP at 16/01
-#### BAckEnd folder
-* Deployed OK
-* Server works fine at https://mern-stack-kohl.vercel.app/
-* Ok the end points at /api/workouts
-* Connection with MongoDB OK
-* Test The CRUD (GetSingleID and GetAllID) with POSTMAN: OK
-* The vercel.json is in the /backend folder
+DONE:
+📌 NPM packages installed: cors express mongodb nodemon mongoose dotenv
+📌 Setup a MONGODB cluster with User
+
+## ✏️ RECAP at 18/01
+#### BACKEND
+* Routes
+** Owner Controller
+** Trainer Controller
+** 📌 User Controller => DONE
+** 📌 WorkOut Controller => DONE
+
+* Controllers
+** Owner Controller
+** Trainer Controller
+** 📌 User Controller => DONE
+** 📌 WorkOut Controller => DONE
+
+* MongoDb Model SCHEMA
+** Owner Schema
+** Trainer Schema
+** 📌 User Schema => DONE
+** 📌 WorkOut Schema => DONE
+
+* C.R.U.D operation test with POSTMAN (localhost:8081 => MongoDB LIVE)
+** Owner
+** Trainer
+** User Schema
+** 📌 WorkOut Schema => DONE
+
+### Notes
+* User SCHEMA: use of Crypto Node package
+* See if install also JWT token
 
 ### Technologies
 * Node.js

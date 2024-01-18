@@ -1,24 +1,39 @@
-const Workouts = require('../models/WorkoutModel')
+const Workouts = require('../models/WorkoutModel');
+const mongoose = require('mongoose');
 
-// Get all workouts:
+// Get all workouts: OK
 const viewAllWorkouts = async (req, res)=> {
 
     const allWorkouts = await Workouts.find({}).sort({createdAt: -1});
     res.status(200).json(allWorkouts)
 }
 
+// Get a specific workout: OK
+const getSingleWorkout = async (req, res)=> {
 
-// Get a specific workout:
+    const { id } = req.params;
+
+    if (!mongoose.Types.ObjectId.isValid(id)){
+        return res.status(404).json({error: "No WorkOut found"})
+    }
+
+    const workout = await Workouts.findById(id);
+
+    if(!workout){
+      return res.status(400).json({error: "No WorkOut found"})
+    }
+    res.status(200).json(workout);
+}
 
 // Create a NEW workout:
 const createNewWorkOut = async (req, res)=> {
 
-    const {title, loads, reps} = req.body
+    const {title, loads, rest, reps} = req.body
 
     // Add doc to the Mongo DB
 
     try{
-        const workout = await Workouts.create({title, loads, reps})
+        const workout = await Workouts.create({title, loads, rest, reps})
         res.status(200).json(workout)
     }
 
@@ -28,9 +43,45 @@ const createNewWorkOut = async (req, res)=> {
 
 }
 
+// Delete a WorkOut
+const deleteWorkout = async (req, res)=> {
 
-// Delete a workout
+    const { id } = req.params;
+
+    if (!mongoose.Types.ObjectId.isValid(id)){
+        return res.status(404).json({error: "No WorkOut found"})
+    }
+
+    const workout = await Workouts.findOneAndDelete({_id: id})
+
+    if(!workout){
+        return res.status(400).json({error: "No WorkOut found"})
+      }
+      res.status(200).json(workout);
+}
+
+// Update a WorkOut
+const updateWorkOut = async (req, res)=> {
+
+    const {title, loads, rest, reps} = req.body
+
+    const { id } = req.params;
+
+    if (!mongoose.Types.ObjectId.isValid(id)){
+        return res.status(404).json({error: "No WorkOut found gg"})
+    }
+
+    const workout = await Workouts.findByIdAndUpdate({_id: id},{
+        ...req.body
+    })
+
+    if(!workout){
+        return res.status(400).json({error: "No WorkOut found"})
+    }
+    res.status(200).json(workout);
+
+}
 
 module.exports = {
-    createNewWorkOut,viewAllWorkouts
+    createNewWorkOut, viewAllWorkouts, getSingleWorkout, deleteWorkout, updateWorkOut
 }
