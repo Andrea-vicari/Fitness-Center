@@ -28,10 +28,9 @@ Repo for Fitness Center React Application
  * 📌 User DONE ✨
 
 ### Example Response from /api/user
-[]
-
+[https://github.com/Andrea-vicari/Fitness-Center/blob/master/serverRes.png]
 ### Screen from the LIVE MongoDB
-
+[https://github.com/Andrea-vicari/Fitness-Center/blob/master/MongoDB.png]
 ### Notes
 * See if install also JWT token
 * See if try with React Native (Ask to Fabio)
