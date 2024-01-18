@@ -2,7 +2,7 @@
 Repo for Fitness Center React Application
 ========================================
 
-DONE:
+### DONE:
 📌 NPM packages installed: cors express mongodb nodemon mongoose dotenv\
 📌 Setup a MONGODB cluster with User\
 
