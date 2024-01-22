@@ -6,15 +6,15 @@ const app = express();
 
 app.use(express.json());
 
-/* !!! Important to avoid CORS block (!! Check the final slash / )
+
 app.use(cors(
     {
-        origin: ["https://deploy-mern-api-render-frontend.vercel.app"],
+        origin: ["http://localhost:5173"],
         methods: ["POST", "GET"],
         credentials: true
     }
 ));
-*/
+
 
 mongoose.connect(process.env.MONGODB_URI)
     .then(()=>{
