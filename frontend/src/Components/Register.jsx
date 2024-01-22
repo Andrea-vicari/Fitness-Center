@@ -3,17 +3,18 @@ import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 
-
 const Register = () => {
 
-    const [username, setUsername] = useState()
+    const [UserName, setUsername] = useState()
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
+
     const navigate = useNavigate()
+
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post('http://localhost:8081/api/users', {username, email, password})
+        axios.post('http://localhost:8080/api/users', {UserName, email, password})
         .then(res => navigate('/login'))
         .catch(err => console.log(err))
     }
@@ -25,7 +26,7 @@ const Register = () => {
             <br />
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label htmlFor="name">Username:</label> <br />
+                    <label htmlFor="UserName">Username:</label> <br />
                     <input type="text" placeholder='Enter username'
                     onChange={e => setUsername(e.target.value)}/>
                 </div>
