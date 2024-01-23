@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import axios from 'axios'
-
+import axios from 'axios';
+import logo from "../assets/react.svg"
 
 const Register = () => {
 
@@ -16,12 +16,14 @@ const Register = () => {
         e.preventDefault()
         axios.post('http://localhost:8080/api/users', {UserName, email, password})
         .then(res => navigate('/login'))
-        .catch(err => console.log(err))
+        .catch(err => alert("User Already Present"))
     }
 
   return (
     <div className='signup_container'>
+
         <div className='signup_form'>
+        <img className='mx-auto' src={logo}></img>
             <h2>Sign Up</h2>
             <br />
             <form onSubmit={handleSubmit}>
