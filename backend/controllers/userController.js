@@ -19,7 +19,7 @@ const getSingleUser = async (req, res)=> {
 
         const user = await Users.findById(id);
 
-        if(!track){
+        if(!user){
           return res.status(400).json({error: "No User found"})
         }
         res.status(200).json(user);
