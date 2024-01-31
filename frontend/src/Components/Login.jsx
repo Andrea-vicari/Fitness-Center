@@ -1,48 +1,64 @@
-import React, { useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import axios from 'axios'
+import { useState } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { Link } from 'react-router-dom'
+import { useLogin } from "../hooks/useLogin";
 
-const Login = () => {
-    const [email, setEmail] = useState()
-    const [password, setPassword] = useState()
-    const navigate = useNavigate()
+function Login() {
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const {login, isLoading, error} = useLogin()
 
-    axios.defaults.withCredentials = true;
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        axios.post('http://localhost:8080/api/users', {email, password})
-        .then(res => {
-            if(res.data === "Success") {
-                window.location.href = "/"
-            }
-        })
-        .catch(err => console.log(err))
+    const handleSubmit = async (e) => {
+      e.preventDefault()
+
+      await login(email,password)
     }
+
   return (
-    <div className='signup_container'>
-        <div className='signup_form'>
-            <h2>Login </h2>
-            <br />
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="email">Email:</label><br />
-                    <input type="email" placeholder='Enter Email'
-                    onChange={e => setEmail(e.target.value)}/>
-                </div>
-                <br />
-                <div>
-                    <label htmlFor="password">Password:</label><br />
-                    <input type="password" placeholder='********'
-                    onChange={e => setPassword(e.target.value)}/>
-                </div>
-                <button className='signup_btn'>Login</button>
-            </form>
-            <br></br>
-            <p>Not Registered?</p>
-            <Link to="/register"><button>Signup</button></Link>
-        </div>
+    <div className="d-flex justify-content-center align-items-center bg-secondary vh-100">
+      <div className="bg-white p-3 rounded w-75">
+        <h2>Login</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="mb-3">
+            <label htmlFor="email">
+              <strong>Email</strong>
+            </label>
+            <input
+              type="email"
+              placeholder="Enter Email"
+              autoComplete="off"
+              name="email"
+              className="form-control rounded-0"
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="email">
+              <strong>Password</strong>
+            </label>
+            <input
+              type="password"
+              placeholder="Enter Password"
+              name="password"
+              className="form-control rounded-0"
+              onChange={(e) => setPassword(e.target.value)}
+              value={password}
+            />
+          </div>
+          <button type="submit" className="btn btn-success w-100 rounded-0" disabled={isLoading}>
+            Login
+          </button>
+          {error && <div className="error text-danger fs-4 mt-3">{error}</div>}
+          </form>
+          <p className="mt-3">Don't have an account?</p>
+          <Link to="/signup" className="btn btn-default border w-100 bg-light rounded-0 text-decoration-none">
+            Signup
+          </Link>
+
+      </div>
     </div>
-  )
+  );
 }
 
-export {Login};
+export default Login;

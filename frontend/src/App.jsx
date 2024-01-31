@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 
 import {Login} from './Components/Login';
@@ -10,7 +10,7 @@ function App() {
 
 
   return (
-    <React.Fragment>
+
 
 
 
@@ -19,7 +19,7 @@ function App() {
               <Route path='/login' element={<Login />}></Route>
             </Routes>
 
-    </React.Fragment>
+
   )
 }
 

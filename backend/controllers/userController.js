@@ -1,88 +1,53 @@
 const Users = require('../models/UserModel');
-const mongoose = require('mongoose');
+const jwt = require("jsonwebtoken");
 
 
-// Get ALL user OK
-const viewAllUsers = async (req, res)=> {
-    const allUsers = await Users.find({}).sort({createdAt: -1});
-    res.status(200).json(allUsers)
+const createToken = (_id) =>{
+   return jwt.sign({_id}, process.env.SECRET, {expiresIn: '3d'})
 }
 
-// Get a single user OK
-const getSingleUser = async (req, res)=> {
+//SignUp
+const signupUser = async (req, res)=> {
 
-        const { id } = req.params;
-
-        if (!mongoose.Types.ObjectId.isValid(id)){
-            return res.status(404).json({error: "No User found"})
-        }
-
-        const user = await Users.findById(id);
-
-        if(!user){
-          return res.status(400).json({error: "No User found"})
-        }
-        res.status(200).json(user);
-}
-
-// Create a NEW user: OK
-const createNewUser = async (req, res)=> {
-
-    const {UserName , email, password} = req.body
-
-    const role = "user"
+    const {email, password } = req.body;
 
     try{
-        const user = await Users.create({UserName , email, password, role})
-        res.status(200).json(user)
-    }
+        const user = await Users.signup(email, password)
 
+        // Token creation
+        const token = createToken(user._id)
+
+        const user_id = user._id
+
+        res.status(200).json({email, token, user_id});
+    }
     catch(error){
         res.status(400).json({error: error.message})
     }
 
 }
 
-// Delete a single user: OK
-const deleteUser = async (req, res)=> {
+// Login
+const loginUser = async (req, res)=> {
 
-    const { id } = req.params;
+    const {email, password } = req.body;
 
-    if (!mongoose.Types.ObjectId.isValid(id)){
-        return res.status(404).json({error: "No User found"})
+    try{
+        const user = await Users.login(email, password)
+
+        // Token creation
+        const token = createToken(user._id)
+        const user_id = user._id
+
+        res.status(200).json({email, token, user_id});
+    }
+    catch(error){
+        res.status(400).json({error: error.message})
     }
 
-    const user = await Users.findOneAndDelete({_id: id})
-
-    if(!user){
-        return res.status(400).json({error: "No User found"})
-      }
-      res.status(200).json(user);
-}
-
-// Update a Single user: OK
-const updateUser = async (req, res)=> {
-
-    const {UserName , email, password} = req.body
-
-    const { id } = req.params;
-
-    if (!mongoose.Types.ObjectId.isValid(id)){
-        return res.status(404).json({error: "No User found gg"})
-    }
-
-    const user = await Users.findByIdAndUpdate({_id: id},{
-        ...req.body
-    })
-
-    if(!user){
-        return res.status(400).json({error: "No Track found y"})
-    }
-    res.status(200).json(user);
 
 }
-
 
 module.exports = {
-    createNewUser, viewAllUsers, getSingleUser, deleteUser, updateUser
+    signupUser, loginUser
 }
