@@ -20,7 +20,7 @@ function Signup() {
     <div className="container py-5 bg-fitness">
       <div className="d-flex justify-content-center align-items-center py-5">
         <div className="bg-dark p-3 rounded w-75 text-white">
-          <h2 className="text-white">Register</h2>
+          <h2 className="text-white">Registrati</h2>
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
               <label htmlFor="email">
@@ -28,7 +28,7 @@ function Signup() {
               </label>
               <input
                 type="email"
-                placeholder="Enter Email"
+                placeholder="Inserisci Email"
                 autoComplete="off"
                 name="email"
                 className="form-control rounded-0"
@@ -42,7 +42,7 @@ function Signup() {
               </label>
               <input
                 type="password"
-                placeholder="Enter Password"
+                placeholder="Inserisci Password"
                 name="password"
                 className="form-control rounded-0"
                 onChange={(e) => setPassword(e.target.value)}
@@ -50,13 +50,13 @@ function Signup() {
               />
             </div>
             <button type="submit" className="btn btn-danger w-100 rounded-0 mt-3" disabled={isLoading}>
-              Sign Up
+              Registrati
             </button>
             {error && <div className="error text-danger fs-4 mt-3">{error}</div>}
             </form>
-            <p className="mt-5">Already Have an Account?</p>
+            <p className="mt-5">Hai già un account?</p>
             <Link to="/login" className="btn btn-default border w-100 bg-light rounded-0 text-decoration-none">
-              Login
+              Accedi
             </Link>
 
         </div>

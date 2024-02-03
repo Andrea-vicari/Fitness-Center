@@ -19,6 +19,7 @@ const signupUser = async (req, res)=> {
 
         const user_id = user._id
 
+
         res.status(200).json({email, token, user_id});
     }
     catch(error){

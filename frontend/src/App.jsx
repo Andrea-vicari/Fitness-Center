@@ -23,10 +23,11 @@ function App() {
         <Navbar />
 
           <Routes>
+              <Route path="/" element={user ?<DashUser />: <Navigate to="/login"/>} />
               <Route path="/dashboarduser" element={<DashUser />} />
               <Route path="/allenamento" element={<SchedaTraining />} />
               <Route path="/signup" element={<Signup />} />
-              <Route path='/login' element={<Login />}></Route>
+              <Route path='/login' element={!user ? <Login/> : <Navigate to="/"/>}></Route>
           </Routes>
 
         <Footer />
