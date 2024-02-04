@@ -19,6 +19,7 @@ const signupUser = async (req, res)=> {
 
         const user_id = user._id
 
+
         const role = "user"
 
 
@@ -42,7 +43,16 @@ const loginUser = async (req, res)=> {
         const token = createToken(user._id)
         const user_id = user._id
 
-        res.status(200).json({email, token, user_id});
+        let role;
+
+        user_id = "65bf6dfa375e106bad530190" ? role = "admin" : role = user
+
+
+        res.status(200).json({email, token, user_id, role});
+
+
+
+
     }
     catch(error){
         res.status(400).json({error: error.message})
