@@ -43,7 +43,7 @@ const loginUser = async (req, res)=> {
         const token = createToken(user._id)
         const user_id = user._id
 
-        let role;
+
 
         user_id = "65bf6dfa375e106bad530190" ? role = "admin" : role = user
 
