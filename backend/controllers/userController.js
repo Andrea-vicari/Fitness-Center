@@ -60,6 +60,13 @@ const loginUser = async (req, res)=> {
 
 }
 
+// See all
+const seeAllUser = async (req, res)=> {
+
+    const allUsers = await Users.find({}).sort({createdAt: -1});
+    res.status(200).json(allUsers)
+}
+
 module.exports = {
-    signupUser, loginUser
+    signupUser, loginUser, seeAllUser
 }
