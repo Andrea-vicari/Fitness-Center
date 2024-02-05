@@ -9,8 +9,10 @@ import Footer from './Components/Common/Footer';
 import DashUser from './Components/DashUser';
 import DashTrainer from './Components/DashTrainer';
 import SchedaTraining from './Components/SchedaTraining';
+import NuovoTraining from './Components/NewTraining';
 
 import "../src/index.css";
+import NewTraining from './Components/NewTraining';
 
 
 function App() {
@@ -30,6 +32,7 @@ function App() {
               <Route path="/dashboarduser" element={<DashUser />} />
               <Route path="/dashtrainer" element={<DashTrainer />} />
               <Route path="/allenamento" element={<SchedaTraining />} />
+              <Route path="/nuovotraining" element={<NewTraining />} />
               <Route path="/signup" element={<Signup />} />
               <Route path='/login' element={!user ? <Login/> : <Navigate to="/"/>}></Route>
           </Routes>

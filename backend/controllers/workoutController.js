@@ -28,12 +28,12 @@ const getSingleWorkout = async (req, res)=> {
 // Create a NEW workout:
 const createNewWorkOut = async (req, res)=> {
 
-    const {title, loads, rest, reps} = req.body
+    const {title, series, loads, rest, reps} = req.body
 
     // Add doc to the Mongo DB
 
     try{
-        const workout = await Workouts.create({title, loads, rest, reps})
+        const workout = await Workouts.create({title, series, loads, rest, reps})
         res.status(200).json(workout)
     }
 
@@ -63,7 +63,7 @@ const deleteWorkout = async (req, res)=> {
 // Update a WorkOut
 const updateWorkOut = async (req, res)=> {
 
-    const {title, loads, rest, reps} = req.body
+    const {title, series, loads, rest, reps} = req.body
 
     const { id } = req.params;
 
