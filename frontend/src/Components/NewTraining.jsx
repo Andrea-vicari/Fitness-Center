@@ -23,8 +23,6 @@ const NewTraining = () =>{
             headers:{
                 'Content-Type': 'application/json'
               }
-
-
         })
 
 
@@ -41,6 +39,7 @@ const NewTraining = () =>{
             setLoad('')
             setReps('')
             setRest('')
+            setSeries('')
             setError(null)
         }
 
@@ -75,13 +74,28 @@ const NewTraining = () =>{
                 <strong>Ripetizioni</strong>
               </label>
               <input
-                type="text"
-                placeholder="Inserisci Serie"
+                type="number"
+                placeholder="Inserisci Ripezìtizioni"
                 autoComplete="off"
                 name="number"
                 className="form-control rounded-0"
                 onChange={(e) => setReps(e.target.value)}
                 value={reps}
+              />
+            </div>
+
+            <div className="mb-3">
+              <label htmlFor="series">
+                <strong>Serie</strong>
+              </label>
+              <input
+                type="text"
+                placeholder="Inserisci Serie"
+                autoComplete="off"
+                name="number"
+                className="form-control rounded-0"
+                onChange={(e) => setSeries(e.target.value)}
+                value={series}
               />
             </div>
 
@@ -97,7 +111,7 @@ const NewTraining = () =>{
                 name="text"
                 className="form-control rounded-0"
                 onChange={(e) => setRest(e.target.value)}
-                value={loads}
+                value={rest}
               />
             </div>
 
