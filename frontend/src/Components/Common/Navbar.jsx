@@ -2,8 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../Common/logo_fitness.svg";
 
-
-
 import { UseAuthContext } from "../../hooks/UseAuthContext";
 import { useLogout } from "../../hooks/useLogout";
 
@@ -12,6 +10,8 @@ function Navbar () {
     const { logout } = useLogout()
 
     const {user} = UseAuthContext()
+
+    //let role = user.role
 
     const handleLogout = () =>{
       logout()
@@ -34,9 +34,13 @@ function Navbar () {
                     <li className="nav-item">
                       <a className="nav-link" href="#">Link</a>
                     </li>
+
                     <li className="nav-item">
-                      <a className="nav-link disabled" aria-disabled="true">Disabled</a>
+                      <a className="nav-link" href="#">Admin</a>
                     </li>
+
+
+
                   </ul>
                   {user && (
                     <div>
