@@ -89,7 +89,7 @@ const NewTraining = () =>{
                 <strong>Serie</strong>
               </label>
               <input
-                type="text"
+                type="number"
                 placeholder="Inserisci Serie"
                 autoComplete="off"
                 name="number"

@@ -1,13 +1,8 @@
 # Fitness Center Application
 Repo for Fitness Center React Application
 
-# RECAP 31 JANUARY
-Start to clone old MERN server node project
-
 # ⚠️ ==== IMPORTANT ==== ⚠️
 # ⚠️ Change const response = await fetch ADDRESS with the one after BACKEND deployment ⚠️
-
-
 
 ## ✏️ RECAP at 18/01 (BACKEND SIDE)
 ### DONE:

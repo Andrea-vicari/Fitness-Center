@@ -32,7 +32,7 @@ function App() {
               <Route path="/dashboarduser" element={<DashUser />} />
               <Route path="/dashtrainer" element={<DashTrainer />} />
               <Route path="/allenamento" element={<SchedaTraining />} />
-              <Route path="/nuovotraining" element={<NewTraining />} />
+              <Route path="/nuovotraining/:id" element={<NewTraining />} />
               <Route path="/signup" element={<Signup />} />
               <Route path='/login' element={!user ? <Login/> : <Navigate to="/"/>}></Route>
           </Routes>
