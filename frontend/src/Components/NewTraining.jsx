@@ -33,7 +33,7 @@ const NewTraining = () =>{
         setUser(userID)
         setDate(today)
 
-        const workout = {date, user, title, series, reps, rest, loads}
+        const workout = {today, user, title, series, reps, rest, loads}
 
         const response = await fetch('https://fitness-center-khaki.vercel.app/api/workouts', {
 
