@@ -1,14 +1,13 @@
 import React from "react";
 import { useState, useEffect } from "react"
 import { UseAuthContext } from "../hooks/UseAuthContext"
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 
 function DashTrainer (){
 
     const [data, setData] = useState([]);
     const {user} = UseAuthContext()
-    const navigate = useNavigate();
 
 
     const makeAPICall = async () => {
@@ -44,11 +43,11 @@ function DashTrainer (){
 
                 {data.map((e)=>{
                     return(
-                        <div className="row mb-3 text-center">
+                        <div className="row mb-3 text-center" key={e._id}>
                         <div className="col-2"><i className="fa fa-user fs-2"></i></div>
                         <div className="col-6">{e.email}</div>
                         <div className="col-4">
-                        <Link type="button" to={`/nuovotraining/${e._id}`} className="btn btn-danger">Danger</Link>
+                        <Link type="button" to={`/nuovotraining/${e._id}`} state={e._id} className="btn btn-danger">Danger</Link>
                         </div>
                     </div>
 

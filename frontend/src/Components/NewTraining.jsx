@@ -1,20 +1,39 @@
 import { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
+import { Link, useLocation } from "react-router-dom";
+
+var userID;
 
 const NewTraining = () =>{
+
+  let clicked = useLocation();
+
+  const userID = clicked.state
+
+  const today = new Date()
+
+  console.log(today)
+
+
+  console.log(userID)
 
     const [title, setTitle] = useState('')
     const [loads, setLoad] = useState('')
     const [rest, setRest] = useState('')
     const [reps, setReps] = useState('')
     const [series, setSeries] = useState('')
+    const [user, setUser] = useState('')
+    const [date, setDate] = useState('')
     const [error, setError] = useState(null)
 
     const handleSubmit = async (e) =>{
 
         e.preventDefault()
 
-        const workout = {title, series, reps, rest, loads}
+        setUser(userID)
+        setDate(today)
+
+        const workout = {date, user, title, series, reps, rest, loads}
 
         const response = await fetch('https://fitness-center-khaki.vercel.app/api/workouts', {
 
@@ -35,11 +54,13 @@ const NewTraining = () =>{
 
         if(response.ok){
             console.log('Aggiunto', json)
+            setDate('')
             setTitle('')
             setLoad('')
             setReps('')
             setRest('')
             setSeries('')
+            setUser('')
             setError(null)
         }
 
