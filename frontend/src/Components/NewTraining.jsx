@@ -2,13 +2,13 @@ import { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Link, useLocation } from "react-router-dom";
 
-var userID;
+var userID
 
 const NewTraining = () =>{
 
   let clicked = useLocation();
 
-  const userID = clicked.state
+  userID = clicked.state
 
   const today = new Date()
 

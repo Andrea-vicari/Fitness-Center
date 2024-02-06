@@ -6,7 +6,7 @@ const workoutsSchema = new mongoose.Schema({
         required: false
     },
     user:{
-        type: Number,
+        type: String,
         required: false
     },
     title:{
