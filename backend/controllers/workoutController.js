@@ -15,7 +15,7 @@ const getSingleWorkout = async (req, res)=> {
 
 
     // Try this .find({"user":req.params});
-    const workout = await Workouts.find({"user":req.params});
+    const workout = await Workouts.find({"user":id});
    // const workout = await Workouts.findById(id);
 
     if(!workout){
