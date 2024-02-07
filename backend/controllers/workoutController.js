@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 // Get all workouts: OK
 const viewAllWorkouts = async (req, res)=> {
 
-    // const user = req.user._id
+
     const allWorkouts = await Workouts.find({}).sort({createdAt: -1});
     res.status(200).json(allWorkouts)
 }
@@ -14,9 +14,10 @@ const getSingleWorkout = async (req, res)=> {
 
     const { id } = req.params;
 
+    /*
     if (!mongoose.Types.ObjectId.isValid(id)){
         return res.status(404).json({error: "No WorkOut found"})
-    }
+    }*/
 
     const workout = await Workouts.findById(id);
 
