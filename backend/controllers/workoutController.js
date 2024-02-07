@@ -16,8 +16,9 @@ const getSingleWorkout = async (req, res)=> {
     if (!mongoose.Types.ObjectId.isValid(id)){
         return res.status(404).json({error: "No WorkOut found"})
     }
-
-    const workout = await Workouts.findById(id);
+    // Try this .find({"user":req.params});
+    const workout = await Workouts.find({"user":req.params});
+   // const workout = await Workouts.findById(id);
 
     if(!workout){
       return res.status(400).json({error: "No WorkOut found"})
