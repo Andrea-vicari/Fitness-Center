@@ -44,11 +44,12 @@ function Navbar () {
                   </ul>
                   {user && (
                     <div>
-
-                        <p className="text-white">{user.email}</p>
-
-
-                        <i className="fa fa-user-alt text-white fs-4" onClick={handleLogout}><span className="mx-2">Logout</span></i>
+                      <div className="mb-3">
+                        <i className="fa fa-user-alt text-white fs-4"> <small> {user.email}</small></i>
+                        </div>
+                      <div>
+                        <i className="fa fa-toggle-off text-white fs-4" onClick={handleLogout}><small> Logout</small></i>
+                      </div>
                       </div>
                   )
                   }
