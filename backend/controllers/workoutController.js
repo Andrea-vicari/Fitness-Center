@@ -4,7 +4,8 @@ const mongoose = require('mongoose');
 // Get all workouts: OK
 const viewAllWorkouts = async (req, res)=> {
 
-    const allWorkouts = await Workouts.find({}).sort({createdAt: -1});
+    const {today, user, title, series, reps, rest, loads} = req.body
+    const allWorkouts = await Workouts.find({user}).sort({createdAt: -1});
     res.status(200).json(allWorkouts)
 }
 
@@ -29,8 +30,6 @@ const getSingleWorkout = async (req, res)=> {
 const createNewWorkOut = async (req, res)=> {
 
     const {today, user, title, series, reps, rest, loads} = req.body
-
-
 
     // Add doc to the Mongo DB
 

@@ -153,7 +153,7 @@ const NewTraining = () =>{
 
 
 
-            <button type="submit" className="btn btn-danger w-100 rounded-0 mt-3">
+            <button type="submit" className="btn btn-danger w-100 rounded-0 mt-3" onClick={()=>setUser(userID)}>
               Inserisci
             </button>
             {error && <div className="error text-danger fs-4 mt-3">{error}</div>}

@@ -1,7 +1,31 @@
 import React from "react";
+import { useState, useEffect } from "react"
+import { UseAuthContext } from "../hooks/UseAuthContext"
 
 
 function DashUser(){
+
+    const [data, setData] = useState([]);
+    const {user} = UseAuthContext()
+
+    const makeAPICall = async () => {
+        try {
+          const response = await fetch('https://fitness-center-khaki.vercel.app/api/workouts', {mode:'cors'});
+          const data = await response.json();
+          setData(data)
+
+          console.log({ data})
+        }
+        catch (e) {
+          console.log(e)
+        }
+      }
+      useEffect(() => {
+        if(user){
+           makeAPICall();
+        }
+
+      }, [user])
 
     return(
         <div className="container-fluid bg-fitness pt-5 mt-4">
