@@ -13,14 +13,12 @@ const viewAllWorkouts = async (req, res)=> {
 const getSingleWorkout = async (req, res)=> {
 
     const { id } = req.params;
-    send(req.params)
-
     /*
     if (!mongoose.Types.ObjectId.isValid(id)){
         return res.status(404).json({error: "No WorkOut found"})
     }*/
 
-    const workout = await Workouts.find({user: id});
+    const workout = await Workouts.find({user: {id}});
 
     if(!workout){
       return res.status(400).json({error: "No WorkOut found"})
