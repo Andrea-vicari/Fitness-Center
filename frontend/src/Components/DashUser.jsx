@@ -8,9 +8,11 @@ function DashUser(){
     const [data, setData] = useState([]);
     const {user} = UseAuthContext()
 
+    console.log(user.user_id)
+
     const makeAPICall = async () => {
         try {
-          const response = await fetch('https://fitness-center-khaki.vercel.app/api/workouts/65c2a603bb95ce49537db370', {mode:'cors',
+          const response = await fetch(`https://fitness-center-khaki.vercel.app/api/workouts/${user.user_id}`, {mode:'cors',
         headers:{
             'Authorization': `Bearer ${user.token}`
         }});
