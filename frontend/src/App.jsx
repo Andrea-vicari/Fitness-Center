@@ -29,9 +29,8 @@ function App() {
 
           <Routes>
               <Route path="/" element={user ?<DashUser />: <Navigate to="/login"/>} />
-              <Route path="/dashboarduser" element={<DashUser />} />
               <Route path="/dashtrainer" element={<DashTrainer />} />
-              <Route path="/allenamento" element={<SchedaTraining />} />
+              <Route path="/allenamento/:id" element={<SchedaTraining />} />
               <Route path="/nuovotraining/:id" element={<NewTraining />} />
               <Route path="/signup" element={<Signup />} />
               <Route path='/login' element={!user ? <Login/> : <Navigate to="/"/>}></Route>

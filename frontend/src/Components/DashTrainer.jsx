@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react"
 import { UseAuthContext } from "../hooks/UseAuthContext"
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 function DashTrainer (){
@@ -47,7 +47,9 @@ function DashTrainer (){
                         <div className="col-2"><i className="fa fa-user fs-2"></i></div>
                         <div className="col-6">{e.email}</div>
                         <div className="col-4">
-                        <Link type="button" to={`/nuovotraining/${e._id}`} state={e._id} className="btn btn-danger">Danger</Link>
+                        <Link type="button" to={`/nuovotraining/${e._id}`} state={e._id} className="btn btn-danger fs-6">
+                          <i className="fa fa-plus mx-2"> Workout</i>
+                        </Link>
                         </div>
                     </div>
 
