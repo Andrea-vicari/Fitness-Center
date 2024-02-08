@@ -11,7 +11,7 @@ function HomeTrainer() {
 
                 <ul className="list-unstyled ps-0">
 
-                  <Link className="icon-link mb-1 text-decoration-none text-white" to="/dashtrainer">
+                  <Link className="icon-link mb-1 text-decoration-none text-white" to="/elencoutenti">
 
                       <i className="fa fa-users fs-4 text-danger"></i>
                       <span className="text-white fs-4">Elenco utenti</span>
