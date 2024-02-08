@@ -55,12 +55,12 @@ function SchedaTraining(){
                         <p className="card-text text-white-50 fs-2">Riposo: {e.rest} sec</p>
                         <p className="card-text text-white-50 fs-2">Carico: {e.loads} KG</p>
 
-                        <a href="#" className="btn btn-success">Completa</a>
-                        <p className='text-white mt-3'>Completato il giorno:</p>
+
+                        <p className='text-white mt-3'>Creato il giorno:</p>
                         <ul className="list-group mt-3">
                             <li className="list-group-item d-flex justify-content-between align-items-center">
+                                {e.today}
 
-                                <span className="badge bg-dark rounded-pill">1</span>
                             </li>
 
                         </ul>
@@ -68,7 +68,8 @@ function SchedaTraining(){
 
                     </div>
                     <div className="card-footer">
-                    <Link to="/" className="btn btn-sm btn-danger mt-3">Torna all'elenco</Link>
+                    <button className="btn btn-sm btn-success">Completa</button>
+                    <Link to="/elencoschede" className="btn btn-sm btn-danger mx-3">Torna alla scheda</Link>
 
                     </div>
                 </div>

@@ -10,7 +10,7 @@ const NewTraining = () =>{
 
   userID = clicked.state
 
-  const today = new Date()
+  const today = new Date().toString()
 
   console.log(today)
 

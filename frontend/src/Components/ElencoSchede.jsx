@@ -4,12 +4,11 @@ import { UseAuthContext } from "../hooks/UseAuthContext"
 import { Link } from 'react-router-dom';
 
 
-function DashUser(){
+function ElencoSchede(){
 
     const [data, setData] = useState([]);
     const {user} = UseAuthContext()
 
-    console.log(user.user_id)
 
     const makeAPICall = async () => {
         try {
@@ -32,19 +31,9 @@ function DashUser(){
 
     return(
         <div className="container-fluid bg-fitness pt-5">
-          <h1 className="text-body-emphasis mx-2">Benvenuto a bordo!</h1>
-            <div className="d-flex align-items-center">
-              <a href="#">
-               <i className="fa fa-user-circle text-danger mb-3" style={{fontSize:70}}></i>
-              </a>
-            <h1 className="text-body-emphasis mx-2">{user.email}</h1>
-            </div>
-
             <div className="col-md-6 pb-4">
             <div className="bg-dark p-3 rounded w-100 text-white">
                   <h3 className="text-white">Scheda Allenamento</h3>
-                  <p className="text-white">Clicca per accedere ad ogni allenamento</p>
-
                 <ul className="list-unstyled ps-0">
                   {data.map((e)=>{
                       return(
@@ -57,7 +46,7 @@ function DashUser(){
                   )})}
                 </ul>
                 <hr className="col-3 col-md-2 mb-3"/>
-                <h3 className="text-body-emphasis">Prenota Lezione</h3>
+                <h3 className="text-white">Schede Completate</h3>
                 <ul className="list-unstyled ps-0">
                 <li>
                     <a className="icon-link mb-1 text-decoration-none text-white" href="" target="_blank">
@@ -67,6 +56,8 @@ function DashUser(){
                 </li>
 
                 </ul>
+                <hr className="col-3 col-md-2 mb-3"/>
+
             </div>
 
             </div>
@@ -76,4 +67,4 @@ function DashUser(){
 
 }
 
-export default DashUser
+export default ElencoSchede

@@ -4,7 +4,17 @@ Repo for Fitness Center React Application
 # ⚠️ ==== IMPORTANT ==== ⚠️
 # ⚠️ Change const response = await fetch ADDRESS with the one after BACKEND deployment ⚠️
 
-## ✏️ RECAP at 18/01 (BACKEND SIDE)
+## ✏️ RECAP at 8/02 (BACKEND SIDE)
+### BackEnd
+* UserController: loginUser function sends back the user object with role = "admin" : role = "user" if the user_id is 65bf6dfa375e106bad530190
+* WorkoutController: getSingleWorkout find({"user":id})
+
+### FrontEND
+* Home.jsx: Receives the user.role: if admin renders HomeTrainer otherwise HomeUser
+* NewTraining.jsx: Add a userid to the workout
+
+================================
+
 ### DONE:
 📌 NPM packages installed: cors express mongodb nodemon mongoose dotenv\
 📌 Setup a MONGODB cluster with User
