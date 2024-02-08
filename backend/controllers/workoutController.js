@@ -25,27 +25,7 @@ const getSingleWorkout = async (req, res)=> {
 // Create a NEW workout:
 const createNewWorkOut = async (req, res)=> {
 
-    let emptyFields = []
 
-    if(!title){
-        emptyFields.push('title')
-    }
-    if(!reps){
-        emptyFields.push('reps')
-    }
-    if(!rest){
-        emptyFields.push('rest')
-    }
-    if(!series){
-        emptyFields.push('series')
-    }
-    if(!loads){
-        emptyFields.push('loads')
-    }
-
-    if(emptyFields.length >0){
-        return res.status(400).json({error: "Campi obbligatori", emptyFields})
-    }
 
 
     const {today, user, title, series, reps, rest, loads} = req.body
