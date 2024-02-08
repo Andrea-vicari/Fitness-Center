@@ -13,8 +13,6 @@ const NewTraining = () =>{
   const today = new Date().toString()
 
   console.log(today)
-
-
   console.log(userID)
 
     const [title, setTitle] = useState('')
@@ -25,6 +23,7 @@ const NewTraining = () =>{
     const [user, setUser] = useState('')
     const [date, setDate] = useState('')
     const [error, setError] = useState(null)
+    const [emptyFields, setemptyFields] = useState([])
 
     const handleSubmit = async (e) =>{
 
@@ -49,7 +48,7 @@ const NewTraining = () =>{
 
         if(!response.ok){
             setError(json.error)
-            alert("NOT OK")
+            setemptyFields(json.emptyFields)
         }
 
         if(response.ok){
@@ -62,6 +61,7 @@ const NewTraining = () =>{
             setSeries('')
             setUser('')
             setError(null)
+            setemptyFields([])
         }
 
 

@@ -6,15 +6,15 @@ function HomeTrainer() {
     <div className="col-md-6 pb-4">
             <div className="bg-dark p-3 rounded w-100 text-white">
                 <h1>Trainer</h1>
-                  <h3 className="text-white">Scheda Allenamento</h3>
-                  <p className="text-white">Clicca per accedere alla scheda</p>
+                  <h3 className="text-white">Elenco utenti</h3>
+                  <p className="text-white">Clicca per elenco utenti</p>
 
                 <ul className="list-unstyled ps-0">
 
-                  <Link className="icon-link mb-1 text-decoration-none text-white" to="/elencoschede">
+                  <Link className="icon-link mb-1 text-decoration-none text-white" to="/dashtrainer">
 
-                      <i className="fa fa-arrow-right fs-4 text-danger"></i>
-                      <span className="text-white fs-4">Vai alla scheda</span>
+                      <i className="fa fa-users fs-4 text-danger"></i>
+                      <span className="text-white fs-4">Elenco utenti</span>
 
                   </Link>
 
