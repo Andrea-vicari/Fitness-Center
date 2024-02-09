@@ -10,10 +10,16 @@ const NewTraining = () =>{
 
   userID = clicked.state
 
-  const today = new Date().toDateString()
+  ;
 
+
+  var today = new Date(new Date().toDateString().split('T').shift())
+
+  // new Date().toDateString().split('T').shift()
   console.log(today)
-  console.log(userID)
+  // var today = arrayDate.join('')
+  // console.log(today)
+
 
     const [title, setTitle] = useState('')
     const [loads, setLoad] = useState('')

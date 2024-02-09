@@ -1,5 +1,7 @@
 const mongoose = require('mongoose')
 
+const ExecutedSchema = new Schema({ eseguito: Date });
+
 const workoutsSchema = new mongoose.Schema({
     today:{
         type: Date,
@@ -14,7 +16,7 @@ const workoutsSchema = new mongoose.Schema({
         required: true
     },
     reps:{
-        type: String,
+        type: Number,
         required: true
     },
     rest:{
@@ -32,7 +34,11 @@ const workoutsSchema = new mongoose.Schema({
     status:{
         type: String,
         required: false
-    }
+    },
+    esecuzioni: {
+        type: [ExecutedSchema],
+        default: undefined
+      }
 
 
 },{ timestamps:true })

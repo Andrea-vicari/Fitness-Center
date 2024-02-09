@@ -34,25 +34,33 @@ function ElencoSchede(){
             <div className="col-md-6 pb-4">
             <div className="bg-dark p-3 rounded w-100 text-white">
                   <h3 className="text-white">Scheda Allenamento</h3>
-                <ul className="list-unstyled ps-0">
+                 <div className="list-unstyled">
                   {data.map((e)=>{
                       return(
-                  <Link className="icon-link mb-1 text-decoration-none text-white" key={e._id} to={`/allenamento/${e._id}`} state={e._id}>
+                      <Link key={e._id} to={`/allenamento/${e._id}`} state={e._id} className="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                        <i className="fa fa-arrow-circle-right fs-4 text-danger"></i>
+                       <div className="d-flex gap-2 w-100 justify-content-between">
+                          <div>
+                            <h5 className="mb-0">{e.title}</h5>
 
-                      <i className="fa fa-arrow-right fs-4 text-danger"></i>
-                      <span className="text-white fs-4">{e.title}</span>
+                          </div>
 
-                  </Link>
-                  )})}
-                </ul>
+                        </div>
+                      </Link>
+                       )})}
+                  </div>
+
                 <hr className="col-3 col-md-2 mb-3"/>
                 <h3 className="text-white">Schede Completate</h3>
-                <ul className="list-unstyled ps-0">
-                <li>
-                    <a className="icon-link mb-1 text-decoration-none text-white" href="" target="_blank">
-                    <i className="fa fa-calendar fs-4 text-danger"></i>
-                    Clicca e prenota
-                    </a>
+                <p>Elenco delle schede completate</p>
+                <ul className="list-unstyled">
+                <li className="list-group-item list-group-item-action d-flex gap-3" aria-current="true">
+                <i className="fa fa-calendar fs-4 text-danger"></i>
+                    <div className="d-flex gap-2 w-100 justify-content-between">
+                          <div>
+                            <h5 className="mb-0">Schede</h5>
+                          </div>
+                      </div>
                 </li>
 
                 </ul>

@@ -25,9 +25,6 @@ const getSingleWorkout = async (req, res)=> {
 // Create a NEW workout:
 const createNewWorkOut = async (req, res)=> {
 
-
-
-
     const {today, user, title, series, reps, rest, loads} = req.body
 
     // Add doc to the Mongo DB
