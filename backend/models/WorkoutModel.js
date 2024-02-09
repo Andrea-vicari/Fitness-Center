@@ -28,6 +28,10 @@ const workoutsSchema = new mongoose.Schema({
     loads:{
         type: Number,
         required: true
+    },
+    status:{
+        type: String,
+        required: false
     }
 
 

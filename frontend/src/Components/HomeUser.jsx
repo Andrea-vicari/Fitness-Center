@@ -5,7 +5,6 @@ function HomeUser() {
   return (
     <div className="col-md-6 pb-4">
             <div className="bg-dark p-3 rounded w-100 text-white">
-                  <h1>User Page</h1>
                   <h3 className="text-white">Scheda Allenamento</h3>
                   <p className="text-white">Clicca per accedere alla scheda</p>
 
