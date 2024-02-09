@@ -52,7 +52,7 @@ function SchedaTraining(){
 
         const workout = {status}
 
-        const response = await fetch("https://fitness-center-khaki.vercel.app/api/workouts/65c66e29886e1ff2363d955e", {
+        const response = await fetch("https://fitness-center-khaki.vercel.app/api/workouts/65c66f937f8043b373bba773", {
 
             method: 'PATCH',
             body: JSON.stringify(workout),
@@ -69,7 +69,7 @@ function SchedaTraining(){
          }
 
         if(response.ok){
-            setStatus("")
+            setStatus("CLOSED")
             setError(null)
             console.log('Modificato', json)
           } }
