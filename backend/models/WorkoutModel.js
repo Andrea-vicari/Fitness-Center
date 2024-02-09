@@ -31,7 +31,6 @@ const workoutsSchema = new mongoose.Schema({
     },
     status:{
         type: String,
-        default:"OPEN",
         required: false
     }
 
