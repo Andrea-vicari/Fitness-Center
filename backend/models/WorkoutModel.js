@@ -35,7 +35,7 @@ const workoutsSchema = new mongoose.Schema({
         type: String,
         required: false
     },
-    esecuzioni: {
+    newExecutedDate: {
         type: [ExecutedSchema],
         default: undefined
       }

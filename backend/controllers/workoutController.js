@@ -25,7 +25,7 @@ const getSingleWorkout = async (req, res)=> {
 // Update a WorkOut
 const updateWorkOut = async (req, res)=> {
 
-    const {esecuzioni} = req.body
+    const {newExecutedDate} = req.body
 
     const { id } = req.params;
 
