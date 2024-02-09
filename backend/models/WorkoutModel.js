@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const ExecutedSchema = new Schema({ eseguito: Date });
+const ExecutedSchema = new mongoose.Schema({ eseguito: Date });
 
 const workoutsSchema = new mongoose.Schema({
     today:{
