@@ -52,7 +52,7 @@ function SchedaTraining(){
 
         const workout = {status}
 
-        const response = await fetch("https://fitness-center-khaki.vercel.app/api/workouts/65c35db23ca186171ea3f7c7", {
+        const response = await fetch("https://fitness-center-khaki.vercel.app/api/workouts/65c66ac66867371258845dc9", {
 
             method: 'PATCH',
             body: JSON.stringify(workout),
@@ -72,13 +72,7 @@ function SchedaTraining(){
             setStatus("CHIUSO")
             setError(null)
             console.log('Modificato', json)
-          }
-
-
-    }
-
-
-
+          } }
 
     return(
         <div className="container-fluid bg-fitness pt-5 mt-4">
