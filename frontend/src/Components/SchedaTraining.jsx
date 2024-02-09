@@ -11,6 +11,9 @@ function SchedaTraining(){
     const [data, setData] = useState([]);
     const {user} = UseAuthContext()
 
+    const newExecutedDate = new Date(new Date().toDateString().split('T').shift())
+    console.log(newExecutedDate)
+
     const makeAPICall = async () => {
         try {
           const response = await fetch(`https://fitness-center-khaki.vercel.app/api/workouts/${user.user_id}`, {mode:'cors'});
@@ -38,7 +41,40 @@ function SchedaTraining(){
         element._id == title ? singleTraining.push(element) : terVar = true
       });
 
+      const [executionDate, setExecutionDate] = useState('')
+      const [error, setError] = useState(null)
 
+      const handleSubmit = async (e) =>{
+
+        e.preventDefault()
+
+        const workout = {newExecutedDate}
+
+        const response = await fetch(`https://fitness-center-khaki.vercel.app/api/workouts/${user.user_id}`, {
+
+            method: 'PATCH',
+            body: JSON.stringify(workout),
+            headers:{
+                'Content-Type': 'application/json'
+              }
+        })
+
+
+        const json = await response.json()
+
+        if(!response.ok){
+            setError(json.error)
+         }
+
+        if(response.ok){
+            console.log('Modificato', json)
+            setExecutionDate(newExecutedDate)
+            setError(null)
+
+        }
+
+
+    }
 
 
 
@@ -85,7 +121,7 @@ function SchedaTraining(){
                   </li>
 
                   </ul>
-                  <button class="btn btn-success d-inline-flex align-items-center mb-3" type="button">
+                  <button onClick={(e)=>handleSubmit(e)} class="btn btn-success d-inline-flex align-items-center mb-3" type="button">
                  Registra esecuzione
                   <i className='fa fa-thumbs-up ms-1'></i>
                 </button>

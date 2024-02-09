@@ -22,6 +22,24 @@ const getSingleWorkout = async (req, res)=> {
     res.status(200).json(workout);
 }
 
+// Update a WorkOut
+const updateWorkOut = async (req, res)=> {
+
+    const {esecuzioni} = req.body
+
+    const { id } = req.params;
+
+
+    const workout = await Workouts.findOneAndUpdate({"user":id},{
+        ...req.body
+    })
+
+    if(!workout){
+        return res.status(400).json({error: "No WorkOut found"})
+    }
+    res.status(200).json(workout);
+
+}
 // Create a NEW workout:
 const createNewWorkOut = async (req, res)=> {
 
@@ -57,27 +75,7 @@ const deleteWorkout = async (req, res)=> {
       res.status(200).json(workout);
 }
 
-// Update a WorkOut
-const updateWorkOut = async (req, res)=> {
 
-    const {title, series, loads, rest, reps} = req.body
-
-    const { id } = req.params;
-
-    if (!mongoose.Types.ObjectId.isValid(id)){
-        return res.status(404).json({error: "No WorkOut found gg"})
-    }
-
-    const workout = await Workouts.findByIdAndUpdate({_id: id},{
-        ...req.body
-    })
-
-    if(!workout){
-        return res.status(400).json({error: "No WorkOut found"})
-    }
-    res.status(200).json(workout);
-
-}
 
 module.exports = {
     createNewWorkOut, viewAllWorkouts, getSingleWorkout, deleteWorkout, updateWorkOut
