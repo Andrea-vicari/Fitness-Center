@@ -11,8 +11,7 @@ function SchedaTraining(){
     const [data, setData] = useState([]);
     const {user} = UseAuthContext()
 
-    const newExecutedDate = new Date(new Date().toDateString().split('T').shift())
-    console.log(newExecutedDate)
+
 
     const makeAPICall = async () => {
         try {
@@ -41,18 +40,19 @@ function SchedaTraining(){
         element._id == title ? singleTraining.push(element) : terVar = true
       });
 
-      const URLtoFetch = singleTraining[0]._id
 
-      const [executionDate, setExecutionDate] = useState('')
       const [error, setError] = useState(null)
+      const [status, setStatus] = useState("")
 
       const handleSubmit = async (e) =>{
 
         e.preventDefault()
 
-        const workout = {newExecutedDate}
+        setStatus("CHIUS0")
 
-        const response = await fetch(`https://fitness-center-khaki.vercel.app/api/workouts/${URLtoFetch}`, {
+        const workout = {status}
+
+        const response = await fetch("https://fitness-center-khaki.vercel.app/api/workouts/65c35db23ca186171ea3f7c7", {
 
             method: 'PATCH',
             body: JSON.stringify(workout),
@@ -69,11 +69,10 @@ function SchedaTraining(){
          }
 
         if(response.ok){
-            console.log('Modificato', json)
-            setExecutionDate(newExecutedDate)
+            setStatus("CHIUSO")
             setError(null)
-
-        }
+            console.log('Modificato', json)
+          }
 
 
     }
