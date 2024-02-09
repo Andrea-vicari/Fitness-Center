@@ -41,6 +41,8 @@ function SchedaTraining(){
         element._id == title ? singleTraining.push(element) : terVar = true
       });
 
+      console.log(singleTraining[0])
+
       const [executionDate, setExecutionDate] = useState('')
       const [error, setError] = useState(null)
 
@@ -50,7 +52,7 @@ function SchedaTraining(){
 
         const workout = {newExecutedDate}
 
-        const response = await fetch(`https://fitness-center-khaki.vercel.app/api/workouts/${user.user_id}`, {
+        const response = await fetch(`https://fitness-center-khaki.vercel.app/api/workouts/${singleTraining[0]._id}`, {
 
             method: 'PATCH',
             body: JSON.stringify(workout),
@@ -84,7 +86,7 @@ function SchedaTraining(){
             <div className="d-flex justify-content-center align-items-center pb-5">
             {singleTraining.map((e)=>{
             return(
-              <div className="card border-none mb-3 rounded-3 w-100 border-0">
+              <div className="card border-none mb-3 rounded-3 w-100 border-0" key={e._id}>
                 <div className="card-header py-3 text-bg-danger">
                   <h1 className="my-0 fs-1">{e.title}</h1>
                 </div>
@@ -121,11 +123,11 @@ function SchedaTraining(){
                   </li>
 
                   </ul>
-                  <button onClick={(e)=>handleSubmit(e)} class="btn btn-success d-inline-flex align-items-center mb-3" type="button">
+                  <button onClick={(e)=>handleSubmit(e)} className="btn btn-success d-inline-flex align-items-center mb-3" type="button">
                  Registra esecuzione
                   <i className='fa fa-thumbs-up ms-1'></i>
                 </button>
-                <Link to="/elencoschede" class="btn btn-outline-danger d-inline-flex align-items-center px-4" type="button">
+                <Link to="/elencoschede" className="btn btn-outline-danger d-inline-flex align-items-center px-4" type="button">
                  Torna alla scheda
                   <i className='fa fa-arrow-circle-left ms-1'></i>
                 </Link>

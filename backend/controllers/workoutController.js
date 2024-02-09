@@ -30,7 +30,7 @@ const updateWorkOut = async (req, res)=> {
     const { id } = req.params;
 
 
-    const workout = await Workouts.findOneAndUpdate({"user":id},{
+    const workout = await Workouts.findByIdAndUpdate({_id: id},{
         ...req.body
     })
 
