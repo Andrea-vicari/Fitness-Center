@@ -25,7 +25,7 @@ const getSingleWorkout = async (req, res)=> {
 // Update a WorkOut
 const updateWorkOut = async (req, res)=> {
 
-    const {status="CHIUSA"} = req.body
+    const {status} = req.body
 
     const { id } = req.params;
 
