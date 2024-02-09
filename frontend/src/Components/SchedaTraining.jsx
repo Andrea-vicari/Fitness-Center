@@ -41,7 +41,7 @@ function SchedaTraining(){
         element._id == title ? singleTraining.push(element) : terVar = true
       });
 
-      console.log(singleTraining[0])
+      const URLtoFetch = singleTraining[0]._id
 
       const [executionDate, setExecutionDate] = useState('')
       const [error, setError] = useState(null)
@@ -52,7 +52,7 @@ function SchedaTraining(){
 
         const workout = {newExecutedDate}
 
-        const response = await fetch(`https://fitness-center-khaki.vercel.app/api/workouts/${singleTraining[0]._id}`, {
+        const response = await fetch(`https://fitness-center-khaki.vercel.app/api/workouts/${URLtoFetch}`, {
 
             method: 'PATCH',
             body: JSON.stringify(workout),
