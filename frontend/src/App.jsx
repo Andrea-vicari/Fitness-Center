@@ -7,7 +7,8 @@ import Login from './Components/Login';
 import Signup from './Components/Signup';
 import Navbar from './Components/Common/Navbar';
 import Footer from './Components/Common/Footer';
-import ElencoSchede from './Components/ElencoSchede';
+import ElencoSchedeAperte from './Components/ElencoSchedeAperte';
+import ElencoSchedeChiuse from './Components/ElencoSchedeChiuse';
 import SingoloUtente from './Components/SingoloUtente';
 import DashTrainer from './Components/DashTrainer';
 import SchedaTraining from './Components/SchedaTraining';
@@ -33,7 +34,8 @@ function App() {
           <Routes>
               <Route path="/" element={user ?<Home />: <Navigate to="/login"/>} />
               <Route path="/dashtrainer" element={<DashTrainer />} />
-              <Route path="/elencoschede" element={user ? <ElencoSchede />: <Navigate to="/login"/>} />
+              <Route path="/elencoschedeaperte" element={user ? <ElencoSchedeAperte />: <Navigate to="/login"/>} />
+              <Route path="/elencoschedechiuse" element={user ? <ElencoSchedeChiuse />: <Navigate to="/login"/>} />
               <Route path="/elencoutenti" element={user ? <ElencoUtenti />: <Navigate to="/login"/>} />
               <Route path="/singoloutente/:id" element={user ? <SingoloUtente />: <Navigate to="/login"/>} />
               <Route path="/allenamento/:id" element={<SchedaTraining />} />

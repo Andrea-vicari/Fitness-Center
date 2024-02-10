@@ -10,7 +10,7 @@ function HomeUser() {
 
                 <ul className="list-unstyled ps-0">
 
-                  <Link className="icon-link mb-1 text-decoration-none text-white" to="/elencoschede">
+                  <Link className="icon-link mb-1 text-decoration-none text-white" to="/elencoschedeaperte">
 
                       <i className="fa fa-arrow-right fs-4 text-danger"></i>
                       <span className="text-white fs-4">Vai alla scheda</span>
@@ -21,12 +21,12 @@ function HomeUser() {
                 <hr className="col-3 col-md-2 mb-3"/>
                 <h3 className="text-white">Schede Completate</h3>
                 <ul className="list-unstyled ps-0">
-                <li>
-                    <a className="icon-link mb-1 text-decoration-none text-white" href="" target="_blank">
-                    <i className="fa fa-calendar fs-4 text-danger"></i>
+                <Link className="icon-link mb-1 text-decoration-none text-white" to="/elencoschedechiuse">
+                  <i className="fa fa-calendar fs-4 text-danger"></i>
                     Clicca e prenota
-                    </a>
-                </li>
+                </Link>
+
+
 
                 </ul>
             </div>

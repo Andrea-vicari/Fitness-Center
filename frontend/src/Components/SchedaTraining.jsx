@@ -8,6 +8,8 @@ function SchedaTraining(){
     let clicked = useLocation();
     var title = clicked.state;
 
+    console.log(title)
+
     const [data, setData] = useState([]);
     const {user} = UseAuthContext()
 
@@ -42,7 +44,7 @@ function SchedaTraining(){
 
 
       const [error, setError] = useState(null)
-      const [status, setStatus] = useState()
+      const [status, setStatus] = useState("CHIUSO")
 
       const handleSubmit = async (e) =>{
 
@@ -52,7 +54,7 @@ function SchedaTraining(){
 
         const workout = {status}
 
-        const response = await fetch("https://fitness-center-khaki.vercel.app/api/workouts/65c6743c02d0d9cb80d509aa", {
+        const response = await fetch(`https://fitness-center-khaki.vercel.app/api/workouts/${title}`, {
 
             method: 'PATCH',
             body: JSON.stringify(workout),
@@ -120,7 +122,7 @@ function SchedaTraining(){
                  Registra esecuzione
                   <i className='fa fa-thumbs-up ms-1'></i>
                 </button>
-                <Link to="/elencoschede" className="btn btn-outline-danger d-inline-flex align-items-center px-4" type="button">
+                <Link to="/elencoschedeaperte" className="btn btn-outline-danger d-inline-flex align-items-center px-4" type="button">
                  Torna alla scheda
                   <i className='fa fa-arrow-circle-left ms-1'></i>
                 </Link>

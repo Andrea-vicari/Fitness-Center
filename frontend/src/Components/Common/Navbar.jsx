@@ -38,14 +38,11 @@ function Navbar () {
                       <Link to="/" className="nav-link" onClick={()=>hideMenu()}>Home</Link>
                     </li>
                     <li className="nav-item">
-                      <Link className="nav-link" to="/elencoschede"onClick={()=>hideMenu()}>Schede</Link>
+                      <Link className="nav-link" to="/elencoschedeaperte"onClick={()=>hideMenu()}>Schede</Link>
                     </li>
-
                     <li className="nav-item">
-                      <a className="nav-link" href="#">Admin</a>
+                      <Link className="nav-link" to="/elencoschedechiuse"onClick={()=>hideMenu()}>Schede Completate</Link>
                     </li>
-
-
 
                   </ul>
                   {user && (
