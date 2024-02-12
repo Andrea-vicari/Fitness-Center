@@ -74,6 +74,10 @@ function ElencoSchedeAperte(){
 
                 </ul>
                 <hr className="col-3 col-md-2 mb-3"/>
+                <Link to="/" className="btn btn-outline-danger d-inline-flex align-items-center px-4" type="button">
+                 Home
+                  <i className='fa fa-arrow-circle-left ms-1'></i>
+                </Link>
 
             </div>
 

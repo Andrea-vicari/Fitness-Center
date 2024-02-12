@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom'
 function HomeUser() {
   return (
     <div className="col-md-6 pb-4">
-            <div className="bg-dark p-3 rounded w-100 text-white">
-                  <h3 className="text-white">Scheda Allenamento</h3>
+            <div className="bg-dark p-3 w-100 text-white pb-5">
+                  <h3 className="text-danger">Scheda Allenamento</h3>
+
                   <p className="text-white">Clicca per accedere alla scheda</p>
 
                 <ul className="list-unstyled ps-0">
@@ -18,20 +19,19 @@ function HomeUser() {
                   </Link>
 
                 </ul>
-                <hr className="col-3 col-md-2 mb-3"/>
-                <h3 className="text-white">Schede Completate</h3>
+                <hr className="col-3 col-md-2 mb-3 w-100"/>
+                <h3 className="text-danger">Storico Schede</h3>
+                <p className="text-white">Elenco delle schede completate</p>
                 <ul className="list-unstyled ps-0">
-                <Link className="icon-link mb-1 text-decoration-none text-white" to="/elencoschedechiuse">
-                  <i className="fa fa-calendar fs-4 text-danger"></i>
-                    Clicca e prenota
+                 <Link className="icon-link mb-1 text-decoration-none text-white" to="/elencoschedechiuse">
+                 <i className="fa fa-arrow-right fs-4 text-danger"></i>
+                  <span className="text-white fs-4">Schede Completate</span>
                 </Link>
-
-
-
                 </ul>
-            </div>
 
             </div>
+
+    </div>
   )
 }
 

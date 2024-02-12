@@ -74,22 +74,16 @@ const SingoloUtente = () =>{
       <div className="d-flex justify-content-center align-items-center">
       {singleUser.map((e)=>{
                     return(
-        <div className="bg-dark p-3 rounded w-100 text-white" key={e._id}>
+        <div className="bg-dark px-3 pt-3 w-100 text-white" key={e._id}>
           <h2 className="text-white">Utente: {e.email}</h2>
 
             <p className="card-title text-white">Data Iscrizione: 12/12/23</p>
-            <hr className="col-3 col-md-2 mb-3 text-white"/>
-            <h5 className="card-title text-white">Aggiungi Allenamento</h5>
-            <Link type="button" to={`/nuovotraining/${e._id}`} state={e._id} className="btn btn-danger fs-6 mt-3">
-             Aggiungi
-            </Link>
-
+            <hr className="col-3 col-md-2 text-white"/>
         </div>
 
     )})}
       </div>
-
-      <div className="bg-dark p-3 rounded w-100 text-white">
+      <div className="bg-dark p-3 w-100 text-white">
       <h2 className="text-white">Scheda ATTIVA</h2>
       <p>Clicca su ogni singolo workout per accedere e completarlo</p>
       <div className="list-unstyled">
@@ -112,6 +106,21 @@ const SingoloUtente = () =>{
       </div>
 
       </div>
+      <div className="d-flex justify-content-center align-items-center">
+      {singleUser.map((e)=>{
+                    return(
+        <div className="bg-dark p-3 w-100 text-white" key={e._id}>
+
+            <h5 className="card-title text-white">Aggiungi Allenamento</h5>
+            <Link type="button" to={`/nuovotraining/${e._id}`} state={e._id} className="btn btn-danger fs-6 mt-3">
+             Aggiungi
+            </Link>
+
+        </div>
+
+    )})}
+      </div>
+
 
     </div>
 

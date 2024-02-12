@@ -78,7 +78,6 @@ function SchedaTrainingTrainer(){
 
     return(
         <div className="container-fluid bg-fitness pt-5 mt-4">
-          <h1>TRAINER BOY</h1>
             <div className="d-flex justify-content-center align-items-center pb-5">
             {singleTraining.map((e)=>{
             return(
@@ -123,8 +122,8 @@ function SchedaTrainingTrainer(){
                  Registra esecuzione
                   <i className='fa fa-thumbs-up ms-1'></i>
                 </button>
-                <Link to="/elencoschedeaperte" className="btn btn-outline-danger d-inline-flex align-items-center px-4" type="button">
-                 Torna alla scheda
+                <Link to={`/elencoutenti/`} className="btn btn-outline-danger d-inline-flex align-items-center px-4" type="button">
+                 Torna all'elenco utenti
                   <i className='fa fa-arrow-circle-left ms-1'></i>
                 </Link>
 

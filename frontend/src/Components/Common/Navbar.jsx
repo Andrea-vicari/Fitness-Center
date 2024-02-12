@@ -7,6 +7,8 @@ import { useLogout } from "../../hooks/useLogout";
 
 function Navbar () {
 
+
+
     function hideMenu(){
       document.getElementById('navbarCollapse').classList.remove('show')
     }
@@ -14,6 +16,8 @@ function Navbar () {
     const { logout } = useLogout()
 
     const {user} = UseAuthContext()
+
+    console.log(user)
 
     const handleLogout = () =>{
       logout()
@@ -25,7 +29,7 @@ function Navbar () {
         <header data-bs-theme="dark">
             <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
               <div className="container">
-                <Link to="/">
+                <Link to="/" onClick={()=>hideMenu()}>
                 <img className="navbar-brand" src={logo}></img>
                 </Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="offcanvasWithBothOptions" aria-expanded="true" aria-label="Toggle navigation">

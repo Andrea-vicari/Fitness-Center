@@ -10,7 +10,6 @@ import Footer from './Components/Common/Footer';
 import ElencoSchedeAperte from './Components/ElencoSchedeAperte';
 import ElencoSchedeChiuse from './Components/ElencoSchedeChiuse';
 import SingoloUtente from './Components/SingoloUtente';
-import DashTrainer from './Components/DashTrainer';
 import SchedaTraining from './Components/SchedaTraining';
 import SchedaTrainingTrainer from './Components/SchedaTrainingTrainer';
 import Home from './Components/Home';
@@ -25,8 +24,6 @@ function App() {
   const {user} = UseAuthContext()
   console.log(user)
 
-
-
   return (
 
     <React.Fragment>
@@ -34,7 +31,6 @@ function App() {
 
           <Routes>
               <Route path="/" element={user ?<Home />: <Navigate to="/login"/>} />
-              <Route path="/dashtrainer" element={<DashTrainer />} />
               <Route path="/elencoschedeaperte" element={user ? <ElencoSchedeAperte />: <Navigate to="/login"/>} />
               <Route path="/elencoschedechiuse" element={user ? <ElencoSchedeChiuse />: <Navigate to="/login"/>} />
               <Route path="/elencoutenti" element={user ? <ElencoUtenti />: <Navigate to="/login"/>} />

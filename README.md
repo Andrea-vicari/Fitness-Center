@@ -4,8 +4,9 @@ Repo for Fitness Center React Application
 # ⚠️ ==== IMPORTANT ==== ⚠️
 # ⚠️ Change const response = await fetch ADDRESS with the one after BACKEND deployment ⚠️
 
-## ✏️ RECAP at 8/02 (BACKEND SIDE)
+## ✏️ RECAP at 12/02 (BACKEND SIDE)
 ### BackEnd
+
 * UserController: loginUser function sends back the user object with role = "admin" : role = "user" if the user_id is 65bf6dfa375e106bad530190
 * WorkoutController: getSingleWorkout find({"user":id})
 

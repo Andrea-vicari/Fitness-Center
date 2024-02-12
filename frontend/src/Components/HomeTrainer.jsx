@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom'
 function HomeTrainer() {
   return (
     <div className="col-md-6 pb-4">
-            <div className="bg-dark p-3 rounded w-100 text-white">
-                <h1>Trainer</h1>
+            <div className="bg-dark p-3 w-100 text-white">
                   <h3 className="text-white">Elenco utenti</h3>
                   <p className="text-white">Clicca per elenco utenti</p>
 
