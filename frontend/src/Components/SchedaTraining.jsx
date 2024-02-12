@@ -78,6 +78,7 @@ function SchedaTraining(){
 
     return(
         <div className="container-fluid bg-fitness pt-5 mt-4">
+          <h1>Maybe</h1>
             <div className="d-flex justify-content-center align-items-center pb-5">
             {singleTraining.map((e)=>{
             return(
@@ -86,7 +87,7 @@ function SchedaTraining(){
                   <h1 className="my-0 fs-1">{e.title}</h1>
                 </div>
                 <div className="card-body bg-dark">
-                  <h6 className="text-white card-title pricing-card-title">Data Emissione<small className="text-white fw-light"> {e.today}</small></h6>
+                  <h6 className="text-white card-title pricing-card-title">Data Emissione<small className="text-white fw-light"> {e.createdAt}</small></h6>
                   <ul className="list-unstyled mt-3 mb-2 text-white">
                   <li className="list-group-item list-group-item-action d-flex gap-3" aria-current="true">
                   <div className="d-flex gap-2 w-100 justify-content-between">

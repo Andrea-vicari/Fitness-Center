@@ -66,7 +66,10 @@ function ElencoSchedeChiuse(){
 
                      )})}
                   </div>
-
+                  <Link to="/elencoschedeaperte" className="btn btn-outline-danger d-inline-flex align-items-center px-4" type="button">
+                 Indietro
+                  <i className='fa fa-arrow-circle-left ms-1'></i>
+                </Link>
             </div>
 
             </div>

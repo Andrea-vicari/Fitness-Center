@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const workoutsSchema = new mongoose.Schema({
     today:{
-        type: Date,
+        type: String,
         required: false
     },
     user:{

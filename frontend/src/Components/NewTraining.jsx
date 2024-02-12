@@ -10,10 +10,8 @@ const NewTraining = () =>{
 
   userID = clicked.state
 
-  ;
 
-
-  var today = new Date(new Date().toDateString().split('T').shift())
+  var today = new Date().toDateString().split('T').shift()
 
   // new Date().toDateString().split('T').shift()
   console.log(today)
@@ -27,7 +25,7 @@ const NewTraining = () =>{
     const [reps, setReps] = useState('')
     const [series, setSeries] = useState('')
     const [user, setUser] = useState('')
-    const [date, setDate] = useState('')
+    const [date, setToday] = useState('')
     const [error, setError] = useState(null)
     const [emptyFields, setemptyFields] = useState([])
 
@@ -36,8 +34,8 @@ const NewTraining = () =>{
         e.preventDefault()
 
         setUser(userID)
-        setDate(today)
-
+        setToday(today)
+        alert(today)
         const workout = {today, user, title, series, reps, rest, loads}
 
         const response = await fetch('https://fitness-center-khaki.vercel.app/api/workouts', {
@@ -59,7 +57,7 @@ const NewTraining = () =>{
 
         if(response.ok){
             console.log('Aggiunto', json)
-            setDate('')
+            setToday('')
             setTitle('')
             setLoad('')
             setReps('')
