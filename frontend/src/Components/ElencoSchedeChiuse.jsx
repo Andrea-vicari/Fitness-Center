@@ -52,13 +52,17 @@ function ElencoSchedeChiuse(){
                       return(
 
                     <div className="col-6" key={e._id}>
-                        <div className="card">
+                        <div className="card mb-3">
                             <div className="card-body">
                                 <h5 className="card-title">{e.title}</h5>
+
                                 <p className="card-text mb-0">SERIE: {e.series}</p>
                                 <p className="card-text mb-0">RIPETIZIONI: {e.reps}</p>
                                 <p className="card-text mb-0">CARICO: {e.loads}</p>
                                 <p className="card-text mb-0">RIPOSO: {e.rest}</p>
+                            </div>
+                            <div className="card-footer">
+                            <small className="card-text mb-0">DATA: {e.today}</small>
                             </div>
                         </div>
                     </div>

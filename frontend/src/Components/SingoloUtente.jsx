@@ -55,7 +55,7 @@ const SingoloUtente = () =>{
     }, [user])
 
     let singleUser = [];
-    let userTraining = [];
+    var userTraining = [];
     let terVar = false
 
       data.forEach(element => {
@@ -64,6 +64,7 @@ const SingoloUtente = () =>{
 
       work.forEach(element => {
         element.status == "OPEN" ? userTraining.push(element) : terVar = true
+        return userTraining
       });
 
       console.log(userTraining)
@@ -94,7 +95,7 @@ const SingoloUtente = () =>{
       <div className="list-unstyled">
       {userTraining.map((e)=>{
             return(
-              <Link key={e._id} to={`/allenamento/${e._id}`} state={e._id} className="list-group-item list-group-item-action d-flex gap-3 py-1" aria-current="true">
+              <Link key={e._id} to={`/allenamento_trainer/${e._id}`} state={e._id} className="list-group-item list-group-item-action d-flex gap-3 py-1" aria-current="true">
                   <i className="fa fa-arrow-circle-right fs-4 text-success"></i>
                       <div className="d-flex gap-2 w-100 justify-content-between">
                         <div>

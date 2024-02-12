@@ -15,10 +15,9 @@ function Navbar () {
 
     const {user} = UseAuthContext()
 
-    //let role = user.role
-
     const handleLogout = () =>{
       logout()
+      hideMenu()
     }
 
     return(

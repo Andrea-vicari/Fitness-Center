@@ -60,14 +60,14 @@ function ElencoSchedeAperte(){
                   </div>
 
                 <hr className="col-3 col-md-2 mb-3"/>
-                <h3 className="text-white">Schede Completate</h3>
+                <h3 className="text-white">Storico schede</h3>
                 <p>Elenco delle schede completate</p>
                 <ul className="list-unstyled">
                 <Link className="list-group-item list-group-item-action d-flex gap-3" to="/elencoschedechiuse">
                 <i className="fa fa-arrow-alt-circle-right fs-4 text-danger"></i>
                     <div className="d-flex gap-2 w-100 justify-content-between">
                           <div>
-                            <h5 className="mb-0">Schede Chiuse</h5>
+                            <h5 className="mb-0">Schede Completate</h5>
                           </div>
                       </div>
                 </Link>

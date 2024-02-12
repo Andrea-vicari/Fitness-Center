@@ -12,6 +12,7 @@ import ElencoSchedeChiuse from './Components/ElencoSchedeChiuse';
 import SingoloUtente from './Components/SingoloUtente';
 import DashTrainer from './Components/DashTrainer';
 import SchedaTraining from './Components/SchedaTraining';
+import SchedaTrainingTrainer from './Components/SchedaTrainingTrainer';
 import Home from './Components/Home';
 
 import "../src/index.css";
@@ -39,6 +40,7 @@ function App() {
               <Route path="/elencoutenti" element={user ? <ElencoUtenti />: <Navigate to="/login"/>} />
               <Route path="/singoloutente/:id" element={user ? <SingoloUtente />: <Navigate to="/login"/>} />
               <Route path="/allenamento/:id" element={<SchedaTraining />} />
+              <Route path="/allenamento_trainer/:id" element={<SchedaTrainingTrainer />} />
               <Route path="/nuovotraining/:id" element={user ?<NewTraining />: <Navigate to="/login"/>} />
               <Route path="/signup" element={<Signup />} />
               <Route path='/login' element={!user ? <Login/> : <Navigate to="/"/>}></Route>

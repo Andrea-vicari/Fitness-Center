@@ -22,6 +22,9 @@ const getSingleWorkout = async (req, res)=> {
     res.status(200).json(workout);
 }
 
+// Close Status
+
+
 // Update a WorkOut
 const updateWorkOut = async (req, res)=> {
 

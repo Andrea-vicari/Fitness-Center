@@ -1,6 +1,8 @@
 import { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Link, useLocation } from "react-router-dom";
+import NewWorkModal from "./NewWorkModal";
+import logo from "./Common/logo_fitness.svg";
 
 var userID
 
@@ -11,7 +13,7 @@ const NewTraining = () =>{
   userID = clicked.state
 
 
-  var today = new Date().toDateString().split('T').shift()
+  var today = new Date().toDateString()//.split('T').shift()
 
   // new Date().toDateString().split('T').shift()
   console.log(today)
@@ -35,7 +37,7 @@ const NewTraining = () =>{
 
         setUser(userID)
         setToday(today)
-        alert(today)
+        openModal()
         const workout = {today, user, title, series, reps, rest, loads}
 
         const response = await fetch('https://fitness-center-khaki.vercel.app/api/workouts', {
@@ -71,6 +73,13 @@ const NewTraining = () =>{
 
     }
 
+    function closeModal(){
+      document.getElementById('modale_workout').classList.remove("d-block")
+    }
+    function openModal(){
+      document.getElementById('modale_workout').classList.add("d-block")
+    }
+
 
     return (
     <div className="container py-5 bg-fitness">
@@ -91,6 +100,7 @@ const NewTraining = () =>{
                 className="form-control rounded-0"
                 onChange={(e) => setTitle(e.target.value)}
                 value={title}
+                required="true"
               />
             </div>
 
@@ -106,6 +116,7 @@ const NewTraining = () =>{
                 className="form-control rounded-0"
                 onChange={(e) => setReps(e.target.value)}
                 value={reps}
+                required="true"
               />
             </div>
 
@@ -121,6 +132,7 @@ const NewTraining = () =>{
                 className="form-control rounded-0"
                 onChange={(e) => setSeries(e.target.value)}
                 value={series}
+                required="true"
               />
             </div>
 
@@ -137,6 +149,7 @@ const NewTraining = () =>{
                 className="form-control rounded-0"
                 onChange={(e) => setRest(e.target.value)}
                 value={rest}
+                required="true"
               />
             </div>
 
@@ -152,6 +165,7 @@ const NewTraining = () =>{
                 className="form-control rounded-0"
                 onChange={(e) => setLoad(e.target.value)}
                 value={loads}
+                required="true"
               />
             </div>
 
@@ -161,7 +175,33 @@ const NewTraining = () =>{
               Inserisci
             </button>
             {error && <div className="error text-danger fs-4 mt-3">{error}</div>}
-            </form>
+          </form>
+
+          {/** MODALE */}
+          <div className="modal modal-sheet bg-dark px-4 py-md-5" tabIndex="-1" role="dialog" id="modale_workout">
+            <div className="modal-dialog-centered modal-xl bg-dark" role="document">
+              <div className="modal-content rounded-4 shadow bg-dark" >
+                <div className="modal-header d-flex justify-content-between">
+                <img src={logo} className='img-fluid'></img>
+                  <h2 className="modal-title text-white text-center">WORKOUT AGGIUNTO</h2>
+
+                </div>
+                <div className="modal-body py-3 text-white">
+
+                <h4 className="text-white mt-3 fw-bold">Allenamento inserito correttamente!</h4>
+                  </div>
+
+                <div className="modal-footer flex-column align-items-stretch w-100 gap-2 pb-3 border-top-0">
+
+                  <div className="modal-footer">
+                    <button type="button" onClick={()=>closeModal()} className="btn btn-danger align-items-center" data-bs-dismiss="modal" aria-label="Close">
+                    <i className='fa fa-times px-2 fs-4'></i>Chiudi
+                      </button>
+                  </div>
+                </div>
+            </div>
+          </div>
+          </div>
 
 
         </div>
