@@ -46,12 +46,11 @@ const createNewWorkOut = async (req, res)=> {
 
     const {today, user, title, series, reps, rest, loads, status} = req.body
 
-    let datProva = new Date().toDateString().split('T').shift()
 
     // Add doc to the Mongo DB
 
     try{
-        const workout = await Workouts.create({datProva, today, user, title, series, reps, rest, loads, status})
+        const workout = await Workouts.create({today, user, title, series, reps, rest, loads, status})
         res.status(200).json(workout)
     }
 
