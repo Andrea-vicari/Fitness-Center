@@ -15,7 +15,7 @@ const userSchema = new mongoose.Schema({
         required: true
         }
 
-},{ timestamps:true })
+},{ timestamps: { currentTime: () => Math.floor(Date.now() / 1000) } })
 
 // Static SIGNUP method
 userSchema.statics.signup = async function(email, password){
