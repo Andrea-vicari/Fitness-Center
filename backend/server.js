@@ -9,7 +9,9 @@ app.use(express.json());
 
 app.use(cors(
     {
-        origin: ["https://fitness-center-client.vercel.app"],
+        // Use this in production (DO NOT PUT FINAL SLASH)
+        // "https://fitness-center-client.vercel.app"
+        origin: ["http://localhost:5173/"],
         methods: ["POST", "GET", "PUT", "PATCH"],
         credentials: true
     }

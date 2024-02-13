@@ -1,11 +1,10 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { UseAuthContext } from "./hooks/UseAuthContext";
-
+import "../src/index.css";
 
 import Login from './Components/Login';
 import Signup from './Components/Signup';
-import Navbar from './Components/Common/Navbar';
 import Footer from './Components/Common/Footer';
 import ElencoSchedeAperte from './Components/ElencoSchedeAperte';
 import ElencoSchedeChiuse from './Components/ElencoSchedeChiuse';
@@ -15,7 +14,7 @@ import SchedaTraining from './Components/SchedaTraining';
 import SchedaTrainingTrainer from './Components/SchedaTrainingTrainer';
 import Home from './Components/Home';
 
-import "../src/index.css";
+
 import NewTraining from './Components/NewTraining';
 import ElencoUtenti from './Components/ElencoUtenti';
 
@@ -23,7 +22,6 @@ import ElencoUtenti from './Components/ElencoUtenti';
 function App() {
 
   const {user} = UseAuthContext()
-  console.log(user)
 
   return (
 
@@ -42,7 +40,8 @@ function App() {
               <Route path="/allenamento_trainer/:id" element={<SchedaTrainingTrainer />} />
               <Route path="/nuovotraining/:id" element={user ?<NewTraining />: <Navigate to="/login"/>} />
               <Route path="/signup" element={<Signup />} />
-              <Route path='/login' element={!user ? <Login/> : <Navigate to="/"/>}></Route>
+              <Route path='/login' element={<Login/> }></Route>
+              <Route path='*' element={!user ? <Login/> : <Navigate to="/"/>}></Route>
           </Routes>
 
         <Footer />
