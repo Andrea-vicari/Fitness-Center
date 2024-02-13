@@ -8,11 +8,12 @@ function Login() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const {login, isLoading, error} = useLogin()
+    const [username, setUsername] = useState('')
 
     const handleSubmit = async (e) => {
       e.preventDefault()
 
-      await login(email,password)
+      await login(username, email,password)
     }
 
   return (
@@ -22,6 +23,20 @@ function Login() {
             <div className="bg-dark p-3 rounded w-75 text-white">
               <h2>Accedi</h2>
               <form onSubmit={handleSubmit}>
+              <div className="mb-3">
+              <label htmlFor="username">
+                <strong>UserName</strong>
+              </label>
+              <input
+                type="text"
+                placeholder="Inserisci Nome"
+                autoComplete="off"
+                name="username"
+                className="form-control rounded-0"
+                onChange={(e) => setUsername(e.target.value)}
+                value={username}
+              />
+            </div>
                 <div className="mb-3">
                   <label htmlFor="email">
                     <strong>Email</strong>
