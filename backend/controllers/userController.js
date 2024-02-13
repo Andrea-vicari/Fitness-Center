@@ -35,7 +35,7 @@ const loginUser = async (req, res)=> {
     const {username, email, password } = req.body;
 
     try{
-        const user = await Users.login(username, email, password)
+        const user = await Users.login(email, password)
 
         // Token creation
         const token = createToken(user._id)
