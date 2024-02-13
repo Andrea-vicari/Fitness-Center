@@ -45,7 +45,7 @@ const loginUser = async (req, res)=> {
 
         user_id == "65cb333e54a7c4c4b4e882ed" ? role = "admin" : role = "user"
 
-        res.status(200).json({username, email, token, user_id, role});
+        res.status(200).json({email, token, user_id, role});
 
 
     }
