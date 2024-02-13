@@ -5,6 +5,10 @@ const validator = require('validator')
 
 const userSchema = new mongoose.Schema({
 
+        dataIscrizione:{
+        type: String,
+        required: false
+        },
         email:{
         type: String,
         required: true,
