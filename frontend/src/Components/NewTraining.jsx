@@ -3,6 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { Link, useLocation } from "react-router-dom";
 import NewWorkModal from "./NewWorkModal";
 import logo from "./Common/logo_fitness.svg";
+import Navbar from "./Common/Navbar";
+import NavTrainer from "./Common/NavTrainer";
 
 var userID
 
@@ -13,12 +15,9 @@ const NewTraining = () =>{
   userID = clicked.state
 
 
-  var today = new Date().toDateString()//.split('T').shift()
+  var today = new Date().toDateString()
 
-  // new Date().toDateString().split('T').shift()
   console.log(today)
-  // var today = arrayDate.join('')
-  // console.log(today)
 
 
     const [title, setTitle] = useState('')
@@ -83,8 +82,9 @@ const NewTraining = () =>{
 
     return (
     <div className="container py-5 bg-fitness">
+      {user.role == "admin" ? <NavTrainer/> : <Navbar/>}
       <div className="d-flex justify-content-center align-items-center py-5">
-        <div className="bg-dark p-3 rounded w-75 text-white">
+        <div className="bg-dark p-3 rounded w-100 text-white">
           <h2 className="text-white">Inserisci WorkOut</h2>
           <form onSubmit={handleSubmit}>
 

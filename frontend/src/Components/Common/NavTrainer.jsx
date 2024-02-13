@@ -5,10 +5,7 @@ import logo from "../Common/logo_fitness.svg";
 import { UseAuthContext } from "../../hooks/UseAuthContext";
 import { useLogout } from "../../hooks/useLogout";
 
-function Navigation () {
-
-    const {user} = UseAuthContext()
-
+function NavTrainer () {
 
 
     function hideMenu(){
@@ -17,16 +14,7 @@ function Navigation () {
 
     const { logout } = useLogout()
 
-    if (user){
-      const dede = user
-    console.log(dede.role)
-    }
-    if (!user){
-
-    }
-
-
-    let fakeVar;
+    const {user} = UseAuthContext()
 
     const handleLogout = () =>{
       logout()
@@ -35,7 +23,8 @@ function Navigation () {
 
     return(
 
-
+        <header data-bs-theme="dark">
+            <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
               <div className="container">
                 <Link to="/" onClick={()=>hideMenu()}>
                 <img className="navbar-brand" src={logo}></img>
@@ -48,19 +37,10 @@ function Navigation () {
                     <li className="nav-item" >
                       <Link to="/" className="nav-link" onClick={()=>hideMenu()}>Home</Link>
                     </li>
-                    {user.role == "user" ?
-                    <li className="nav-item">
-                      <Link className="nav-link" to="/elencoschedeaperte"onClick={()=>hideMenu()}>Scheda In corso</Link>
-                    </li> : fakeVar = false}
-                    {user.role == "user" ?
-                    <li className="nav-item">
-                      <Link className="nav-link" to="/elencoschedechiuse"onClick={()=>hideMenu()}>Storico Schede</Link>
-                    </li>: fakeVar = false}
-                    {user.role == "admin" ?
+
                     <li className="nav-item">
                       <Link className="nav-link" to="/elencoutenti"onClick={()=>hideMenu()}>Elenco Utenti</Link>
                     </li>
-                  : fakeVar = false}
 
                   </ul>
                   {user && (
@@ -76,8 +56,9 @@ function Navigation () {
                   }
                 </div>
               </div>
-
+            </nav>
+        </header>
     )
 }
 
-export default Navigation;
+export default NavTrainer;

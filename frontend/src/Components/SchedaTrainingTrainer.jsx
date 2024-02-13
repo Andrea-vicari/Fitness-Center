@@ -1,7 +1,8 @@
 import { Link, useLocation } from 'react-router-dom'
 import { useState, useEffect } from "react"
 import { UseAuthContext } from "../hooks/UseAuthContext"
-
+import Navbar from "./Common/Navbar";
+import NavTrainer from "./Common/NavTrainer";
 
 function SchedaTrainingTrainer(){
 
@@ -78,6 +79,7 @@ function SchedaTrainingTrainer(){
 
     return(
         <div className="container-fluid bg-fitness pt-5 mt-4">
+          {user.role == "admin" ? <NavTrainer/> : <Navbar/>}
             <div className="d-flex justify-content-center align-items-center pb-5">
             {singleTraining.map((e)=>{
             return(
@@ -119,7 +121,7 @@ function SchedaTrainingTrainer(){
 
                   </ul>
                   <button onClick={(e)=>handleSubmit(e)} className="btn btn-success d-inline-flex align-items-center mb-3" type="button">
-                 Registra esecuzione
+                 Chiudi scheda
                   <i className='fa fa-thumbs-up ms-1'></i>
                 </button>
                 <Link to={`/elencoutenti/`} className="btn btn-outline-danger d-inline-flex align-items-center px-4" type="button">

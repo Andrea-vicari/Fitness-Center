@@ -1,7 +1,8 @@
 import { Link, useLocation } from 'react-router-dom'
 import { useState, useEffect } from "react"
 import { UseAuthContext } from "../hooks/UseAuthContext"
-
+import Navbar from "./Common/Navbar";
+import NavTrainer from "./Common/NavTrainer";
 
 function SchedaTraining(){
 
@@ -44,6 +45,7 @@ function SchedaTraining(){
 
     return(
         <div className="container-fluid bg-fitness pt-5 mt-4">
+             {user.role == "admin" ? <NavTrainer/> : <Navbar/>}
             <div className="d-flex justify-content-center align-items-center pb-5">
             {singleTraining.map((e)=>{
             return(

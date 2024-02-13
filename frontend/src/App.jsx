@@ -27,7 +27,7 @@ function App() {
   return (
 
     <React.Fragment>
-        <Navbar />
+
 
           <Routes>
 

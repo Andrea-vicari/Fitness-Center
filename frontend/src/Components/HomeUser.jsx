@@ -1,9 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Navbar from "./Common/Navbar";
+import NavTrainer from "./Common/NavTrainer";
+import { UseAuthContext } from "../hooks/UseAuthContext"
 
 function HomeUser() {
+
+  const {user} = UseAuthContext()
+
+
   return (
     <div className="col-md-6 pb-4">
+            {user.role == "admin" ? <NavTrainer/> : <Navbar/>}
             <div className="bg-dark p-3 w-100 text-white pb-5">
                   <h3 className="text-danger">Scheda Allenamento</h3>
 

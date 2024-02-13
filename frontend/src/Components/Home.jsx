@@ -2,6 +2,8 @@ import React from "react";
 import { UseAuthContext } from "../hooks/UseAuthContext"
 import HomeUser from "./HomeUser";
 import HomeTrainer from "./HomeTrainer";
+import Navbar from "./Common/Navbar";
+import NavTrainer from "./Common/NavTrainer";
 
 function Home(){
 
@@ -11,6 +13,7 @@ function Home(){
 
     return(
         <div className="container-fluid bg-fitness pt-5">
+          {user.role == "admin" ? <NavTrainer/> : <Navbar/>}
           <div className="bg-dark p-3 w-100 text-white pb-0">
           <h1 className="text-white mx-2">Benvenuto a bordo!</h1>
             <div className="d-flex align-items-center">
@@ -20,6 +23,7 @@ function Home(){
             <h3 className="text-white mx-2">{user.email}</h3>
             </div>
           </div>
+
 
           {user.role == "user" ? <HomeUser/> : <HomeTrainer/>}
 

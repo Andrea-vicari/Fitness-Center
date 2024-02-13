@@ -2,7 +2,8 @@ import React from "react";
 import { useState, useEffect } from "react"
 import { UseAuthContext } from "../hooks/UseAuthContext"
 import { Link } from 'react-router-dom';
-
+import Navbar from "./Common/Navbar";
+import NavTrainer from "./Common/NavTrainer";
 
 function ElencoSchedeChiuse(){
 
@@ -42,6 +43,7 @@ function ElencoSchedeChiuse(){
 
     return(
         <div className="container-fluid bg-fitness pt-5">
+             {user.role == "admin" ? <NavTrainer/> : <Navbar/>}
             <div className="col-md-6 pb-4">
             <div className="bg-dark p-3 rounded w-100 text-white">
                   <h3 className="text-white">Schede Completate</h3>

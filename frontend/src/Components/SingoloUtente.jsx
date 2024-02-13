@@ -2,6 +2,8 @@ import React from "react";
 import { useState, useEffect } from "react"
 import { UseAuthContext } from "../hooks/UseAuthContext"
 import { Link, useLocation } from 'react-router-dom';
+import Navbar from "./Common/Navbar";
+import NavTrainer from "./Common/NavTrainer";
 
 var userID
 
@@ -71,6 +73,7 @@ const SingoloUtente = () =>{
 
     return (
     <div className="container py-5 bg-fitness">
+          {user.role == "admin" ? <NavTrainer/> : <Navbar/>}
       <div className="d-flex justify-content-center align-items-center">
       {singleUser.map((e)=>{
                     return(
