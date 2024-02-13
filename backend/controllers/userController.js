@@ -9,19 +9,21 @@ const createToken = (_id) =>{
 //SignUp
 const signupUser = async (req, res)=> {
 
-    const {username, email, password } = req.body;
+    const {email, password } = req.body;
 
     try{
-        const user = await Users.signup(username, email, password)
+        const user = await Users.signup(email, password)
 
         // Token creation
         const token = createToken(user._id)
 
         const user_id = user._id
+
+
         let role = "user"
 
 
-        res.status(200).json({username, email, token, user_id, role});
+        res.status(200).json({email, token, user_id, role});
     }
     catch(error){
         res.status(400).json({error: error.message})
@@ -32,10 +34,10 @@ const signupUser = async (req, res)=> {
 // Login
 const loginUser = async (req, res)=> {
 
-    const {username, email, password } = req.body;
+    const {email, password } = req.body;
 
     try{
-        const user = await Users.login(username, email, password)
+        const user = await Users.login(email, password)
 
         // Token creation
         const token = createToken(user._id)
@@ -43,9 +45,11 @@ const loginUser = async (req, res)=> {
 
         let role
 
-        user_id == "65cb333e54a7c4c4b4e882ed" ? role = "admin" : role = "user"
+        user_id == "65bf6dfa375e106bad530190" ? role = "admin" : role = "user"
 
-        res.status(200).json({username, email, token, user_id, role});
+        res.status(200).json({email, token, user_id, role});
+
+
 
 
     }

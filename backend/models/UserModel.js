@@ -5,12 +5,6 @@ const validator = require('validator')
 
 const userSchema = new mongoose.Schema({
 
-        username:{
-        type: String,
-        required: false,
-        unique:true
-        },
-
         email:{
         type: String,
         required: true,
@@ -24,10 +18,10 @@ const userSchema = new mongoose.Schema({
 })
 
 // Static SIGNUP method
-userSchema.statics.signup = async function(username, email, password){
+userSchema.statics.signup = async function(email, password){
 
         // Validations
-        if(!username || !email || !password){
+        if(!email || !password){
 
         throw Error('Tutti i campi devono essere compilati')
         }

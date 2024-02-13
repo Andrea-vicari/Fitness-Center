@@ -7,14 +7,14 @@ export const useSignup = () =>{
     const [isLoading, setisLoading] = useState(null)
     const { user, dispatch  } = UseAuthContext()
 
-    const signup = async (username, email, password) => {
+    const signup = async (email, password) => {
         setisLoading(true)
         setError(null)
 
         const response = await fetch('https://fitness-center-khaki.vercel.app/api/users/signup', {
 
             method: 'POST',
-            body: JSON.stringify({username, email, password}),
+            body: JSON.stringify({email, password}),
             headers:{
                 'Content-Type': 'application/json'
               }
