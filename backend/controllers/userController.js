@@ -19,13 +19,10 @@ const signupUser = async (req, res)=> {
 
         const user_id = user._id
 
-        const dataIscrizione = new Date().toDateString()
-
-
         let role = "user"
 
 
-        res.status(200).json({dataIscrizione, email, token, user_id, role});
+        res.status(200).json({email, token, user_id, role});
     }
     catch(error){
         res.status(400).json({error: error.message})

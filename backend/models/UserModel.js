@@ -5,10 +5,6 @@ const validator = require('validator')
 
 const userSchema = new mongoose.Schema({
 
-        dataIscrizione:{
-        type: String,
-        required: false
-        },
         email:{
         type: String,
         required: true,
@@ -19,7 +15,7 @@ const userSchema = new mongoose.Schema({
         required: true
         }
 
-})
+}{ timestamps:true })
 
 // Static SIGNUP method
 userSchema.statics.signup = async function(email, password){
