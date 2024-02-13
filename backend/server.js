@@ -9,7 +9,7 @@ app.use(express.json());
 
 app.use(cors(
     {
-        origin: ["https://fitness-center-client.vercel.app/"],
+        origin: ["https://fitness-center-client.vercel.app"],
         methods: ["POST", "GET", "PUT", "PATCH"],
         credentials: true
     }
