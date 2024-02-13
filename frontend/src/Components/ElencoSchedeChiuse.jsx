@@ -57,7 +57,7 @@ function ElencoSchedeChiuse(){
                                 <h5 className="card-title">{e.title}</h5>
 
                                 <p className="card-text mb-0">SERIE: {e.series}</p>
-                                <p className="card-text mb-0">RIPETIZIONI: {e.reps}</p>
+                                <p className="card-text mb-0">REPS: {e.reps}</p>
                                 <p className="card-text mb-0">CARICO: {e.loads}</p>
                                 <p className="card-text mb-0">RIPOSO: {e.rest}</p>
                             </div>

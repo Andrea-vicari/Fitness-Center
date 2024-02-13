@@ -30,6 +30,7 @@ function App() {
         <Navbar />
 
           <Routes>
+
               <Route path="/" element={user ?<Home />: <Navigate to="/login"/>} />
               <Route path="/elencoschedeaperte" element={user ? <ElencoSchedeAperte />: <Navigate to="/login"/>} />
               <Route path="/elencoschedechiuse" element={user ? <ElencoSchedeChiuse />: <Navigate to="/login"/>} />

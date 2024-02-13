@@ -5,7 +5,10 @@ import logo from "../Common/logo_fitness.svg";
 import { UseAuthContext } from "../../hooks/UseAuthContext";
 import { useLogout } from "../../hooks/useLogout";
 
-function Navbar () {
+function Navigation () {
+
+    const {user} = UseAuthContext()
+
 
 
     function hideMenu(){
@@ -14,7 +17,16 @@ function Navbar () {
 
     const { logout } = useLogout()
 
-    const {user} = UseAuthContext()
+    if (user){
+      const dede = user
+    console.log(dede.role)
+    }
+    if (!user){
+
+    }
+
+
+    let fakeVar;
 
     const handleLogout = () =>{
       logout()
@@ -23,8 +35,7 @@ function Navbar () {
 
     return(
 
-        <header data-bs-theme="dark">
-            <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+
               <div className="container">
                 <Link to="/" onClick={()=>hideMenu()}>
                 <img className="navbar-brand" src={logo}></img>
@@ -37,12 +48,19 @@ function Navbar () {
                     <li className="nav-item" >
                       <Link to="/" className="nav-link" onClick={()=>hideMenu()}>Home</Link>
                     </li>
+                    {user.role == "user" ?
                     <li className="nav-item">
-                      <Link className="nav-link" to="/elencoschedeaperte"onClick={()=>hideMenu()}>Schede</Link>
-                    </li>
+                      <Link className="nav-link" to="/elencoschedeaperte"onClick={()=>hideMenu()}>Scheda In corso</Link>
+                    </li> : fakeVar = false}
+                    {user.role == "user" ?
                     <li className="nav-item">
-                      <Link className="nav-link" to="/elencoschedechiuse"onClick={()=>hideMenu()}>Schede Completate</Link>
+                      <Link className="nav-link" to="/elencoschedechiuse"onClick={()=>hideMenu()}>Storico Schede</Link>
+                    </li>: fakeVar = false}
+                    {user.role == "admin" ?
+                    <li className="nav-item">
+                      <Link className="nav-link" to="/elencoutenti"onClick={()=>hideMenu()}>Elenco Utenti</Link>
                     </li>
+                  : fakeVar = false}
 
                   </ul>
                   {user && (
@@ -58,9 +76,8 @@ function Navbar () {
                   }
                 </div>
               </div>
-            </nav>
-        </header>
+
     )
 }
 
-export default Navbar;
+export default Navigation;

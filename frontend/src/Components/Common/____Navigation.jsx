@@ -1,31 +1,33 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import logo from "../Common/logo_fitness.svg";
+import React from 'react'
+import { useState, useEffect } from "react"
+import { UseAuthContext } from "./hooks/UseAuthContext"
+import { Link } from 'react-router-dom';
 
-import { UseAuthContext } from "../../hooks/UseAuthContext";
-import { useLogout } from "../../hooks/useLogout";
-
-function Navbar () {
-
-
-    function hideMenu(){
-      document.getElementById('navbarCollapse').classList.remove('show')
-    }
-
-    const { logout } = useLogout()
-
+function Navigation() {
+    const [data, setData] = useState([]);
     const {user} = UseAuthContext()
 
-    const handleLogout = () =>{
-      logout()
-      hideMenu()
-    }
 
-    return(
+    const makeAPICall = async () => {
+        try {
+          const response = await fetch(`https://fitness-center-khaki.vercel.app/api/users/`, {mode:'cors'});
+          const data = await response.json();
+          setData(data)
+          console.log({ data})
+        }
+        catch (e) {
+          console.log(e)
+        }
+      }
+      useEffect(() => {
+        if(user){
+           makeAPICall();
+        }
 
-        <header data-bs-theme="dark">
-            <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-              <div className="container">
+      }, [user])
+
+  return (
+    <div className="container">
                 <Link to="/" onClick={()=>hideMenu()}>
                 <img className="navbar-brand" src={logo}></img>
                 </Link>
@@ -58,9 +60,7 @@ function Navbar () {
                   }
                 </div>
               </div>
-            </nav>
-        </header>
-    )
+  )
 }
 
-export default Navbar;
+export default Navigation

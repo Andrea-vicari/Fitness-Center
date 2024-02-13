@@ -100,7 +100,7 @@ const NewTraining = () =>{
                 className="form-control rounded-0"
                 onChange={(e) => setTitle(e.target.value)}
                 value={title}
-                required="true"
+                required={true}
               />
             </div>
 
@@ -116,7 +116,7 @@ const NewTraining = () =>{
                 className="form-control rounded-0"
                 onChange={(e) => setReps(e.target.value)}
                 value={reps}
-                required="true"
+                required={true}
               />
             </div>
 
@@ -132,7 +132,7 @@ const NewTraining = () =>{
                 className="form-control rounded-0"
                 onChange={(e) => setSeries(e.target.value)}
                 value={series}
-                required="true"
+                required={true}
               />
             </div>
 
@@ -149,7 +149,7 @@ const NewTraining = () =>{
                 className="form-control rounded-0"
                 onChange={(e) => setRest(e.target.value)}
                 value={rest}
-                required="true"
+                required={true}
               />
             </div>
 
@@ -165,7 +165,7 @@ const NewTraining = () =>{
                 className="form-control rounded-0"
                 onChange={(e) => setLoad(e.target.value)}
                 value={loads}
-                required="true"
+                required={true}
               />
             </div>
 
@@ -174,6 +174,10 @@ const NewTraining = () =>{
             <button type="submit" className="btn btn-danger w-100 rounded-0 mt-3" onClick={()=>setUser(userID)}>
               Inserisci
             </button>
+
+            <Link to={`/elencoutenti/`} type="submit" className="btn btn-outline-danger w-100 rounded-0 mt-3">
+              Torna Indietro
+            </Link>
             {error && <div className="error text-danger fs-4 mt-3">{error}</div>}
           </form>
 
