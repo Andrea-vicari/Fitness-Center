@@ -33,7 +33,7 @@ function Signup() {
                 autoComplete="off"
                 name="username"
                 className="form-control rounded-0"
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => setUsername(e.target.value)}
                 value={username}
               />
             </div>

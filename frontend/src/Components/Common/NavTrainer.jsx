@@ -46,7 +46,7 @@ function NavTrainer () {
                   {user && (
                     <div>
                       <div className="mb-3">
-                        <i className="fa fa-user-alt text-white fs-5"> <small> {user.email}</small></i>
+                        <i className="fa fa-user-alt text-white fs-5"> <small> {user.username}</small></i>
                         </div>
                       <div>
                         <i className="fa fa-toggle-off text-danger fs-4" onClick={()=>handleLogout()}><small className="text-white"> Logout</small></i>

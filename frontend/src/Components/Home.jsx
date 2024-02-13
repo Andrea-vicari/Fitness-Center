@@ -20,7 +20,7 @@ function Home(){
               <a href="#">
                <i className="fa fa-user-circle text-danger mb-3" style={{fontSize:20}}></i>
               </a>
-            <h3 className="text-white mx-2">{user.email}</h3>
+            <h3 className="text-white mx-2">{user.username}</h3>
             </div>
           </div>
 
