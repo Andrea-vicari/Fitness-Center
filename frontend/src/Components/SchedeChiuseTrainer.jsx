@@ -1,19 +1,26 @@
 import React from "react";
 import { useState, useEffect } from "react"
 import { UseAuthContext } from "../hooks/UseAuthContext"
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Navbar from "./Common/Navbar";
 import NavTrainer from "./Common/NavTrainer";
 
-function ElencoSchedeChiuse(){
+var userID
+
+function SchedeChiuseTrainer(){
 
     const [data, setData] = useState([]);
     const {user} = UseAuthContext()
 
+    let clicked = useLocation();
+
+    userID = clicked.state
+
+    console.log(userID)
 
     const makeAPICall = async () => {
         try {
-          const response = await fetch(`https://fitness-center-khaki.vercel.app/api/workouts/${user.user_id}`, {mode:'cors'});
+          const response = await fetch(`https://fitness-center-khaki.vercel.app/api/workouts/${userID}`, {mode:'cors'});
           const data = await response.json();
           setData(data)
           console.log({ data})
@@ -38,7 +45,7 @@ function ElencoSchedeChiuse(){
       });
 
 
-    console.log(closedTraining)
+    console.log(data)
 
 
     return(
@@ -64,7 +71,8 @@ function ElencoSchedeChiuse(){
                                 <p className="card-text mb-0">RIPOSO: {e.rest}</p>
                             </div>
                             <div className="card-footer">
-                            <small className="card-text mb-0">CHIUSA IL: {e.today}</small>
+                            <small className="card-text mb-0">COMPLETATA:</small><br></br>
+                            <small className="card-text mb-0">{e.today}</small>
                             </div>
                         </div>
                     </div>
@@ -72,7 +80,7 @@ function ElencoSchedeChiuse(){
 
                      )})}
                   </div>
-                  <Link to="/elencoschedeaperte" className="btn btn-outline-danger d-inline-flex align-items-center px-4" type="button">
+                  <Link to="/elencoutenti" className="btn btn-outline-danger d-inline-flex align-items-center px-4" type="button">
                  Indietro
                   <i className='fa fa-arrow-circle-left ms-1'></i>
                 </Link>
@@ -85,4 +93,4 @@ function ElencoSchedeChiuse(){
 
 }
 
-export default ElencoSchedeChiuse
+export default SchedeChiuseTrainer

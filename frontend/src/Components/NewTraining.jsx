@@ -1,7 +1,7 @@
 import { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Link, useLocation } from "react-router-dom";
-import NewWorkModal from "./NewWorkModal";
+
 import logo from "./Common/logo_fitness.svg";
 import Navbar from "./Common/Navbar";
 import NavTrainer from "./Common/NavTrainer";

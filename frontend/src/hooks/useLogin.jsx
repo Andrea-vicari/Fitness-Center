@@ -26,7 +26,6 @@ export const useLogin = () =>{
         if(!response.ok){
             setisLoading(false)
             setError(json.error)
-            alert("NOT OK")
         }
 
         if(response.ok){

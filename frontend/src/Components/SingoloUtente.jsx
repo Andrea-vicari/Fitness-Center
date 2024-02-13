@@ -91,7 +91,25 @@ const SingoloUtente = () =>{
 
     )})}
       </div>
+
+      <div className="d-flex justify-content-center align-items-center mb-0">
+      {singleUser.map((e)=>{
+                    return(
+        <div className="bg-dark p-3 w-100 text-white" key={e._id}>
+
+            <h5 className="card-title text-white">Aggiungi Allenamento</h5>
+            <Link type="button" to={`/nuovotraining/${e._id}`} state={e._id} className="btn btn-danger fs-6 mt-3">
+            <i className="fa fa-plus-square fs-3 mx-2"></i>
+             Aggiungi
+            </Link>
+
+        </div>
+
+    )})}
+      </div>
+
       <div className="bg-dark p-3 w-100 text-white">
+      <hr className="col-3 col-md-2 text-white"/>
       <h2 className="text-white">Scheda ATTIVA</h2>
       <p>Clicca su ogni singolo workout per accedere e completarlo</p>
       <div className="list-unstyled">
@@ -114,21 +132,19 @@ const SingoloUtente = () =>{
       </div>
 
       </div>
-      <div className="d-flex justify-content-center align-items-center">
-      {singleUser.map((e)=>{
-                    return(
-        <div className="bg-dark p-3 w-100 text-white" key={e._id}>
 
-            <h5 className="card-title text-white">Aggiungi Allenamento</h5>
-            <Link type="button" to={`/nuovotraining/${e._id}`} state={e._id} className="btn btn-danger fs-6 mt-3">
-             Aggiungi
-            </Link>
-
-        </div>
-
-    )})}
-      </div>
-
+      <div className="bg-dark px-3 pt-3 pb-3 w-100 text-white">
+      <hr className="col-3 col-md-2 mb-3 w-100"/>
+          <h3 className="text-danger">Storico Schede</h3>
+          <p className="text-white">Elenco delle schede completate</p>
+          <ul className="list-unstyled ps-0">
+              <Link className="icon-link mb-1 text-decoration-none text-white" to={`/schedechiusetrainer/${userID}`}
+              state={userID}>
+              <i className="fa fa-arrow-right fs-4 text-danger"></i>
+                  <span className="text-white fs-4">Schede Completate</span>
+              </Link>
+          </ul>
+          </div>
 
     </div>
 

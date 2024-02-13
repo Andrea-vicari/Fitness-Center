@@ -9,6 +9,7 @@ import Navbar from './Components/Common/Navbar';
 import Footer from './Components/Common/Footer';
 import ElencoSchedeAperte from './Components/ElencoSchedeAperte';
 import ElencoSchedeChiuse from './Components/ElencoSchedeChiuse';
+import SchedeChiuseTrainer from './Components/SchedeChiuseTrainer';
 import SingoloUtente from './Components/SingoloUtente';
 import SchedaTraining from './Components/SchedaTraining';
 import SchedaTrainingTrainer from './Components/SchedaTrainingTrainer';
@@ -34,6 +35,7 @@ function App() {
               <Route path="/" element={user ?<Home />: <Navigate to="/login"/>} />
               <Route path="/elencoschedeaperte" element={user ? <ElencoSchedeAperte />: <Navigate to="/login"/>} />
               <Route path="/elencoschedechiuse" element={user ? <ElencoSchedeChiuse />: <Navigate to="/login"/>} />
+              <Route path="/schedechiusetrainer/:id" element={user ? <SchedeChiuseTrainer />: <Navigate to="/login"/>} />
               <Route path="/elencoutenti" element={user ? <ElencoUtenti />: <Navigate to="/login"/>} />
               <Route path="/singoloutente/:id" element={user ? <SingoloUtente />: <Navigate to="/login"/>} />
               <Route path="/allenamento/:id" element={<SchedaTraining />} />

@@ -34,6 +34,7 @@ function ElencoSchedeAperte(){
 
       data.forEach(element => {
         element.status == "OPEN" ? openTraining.push(element) : fakeVar = true
+
       });
 
     console.log(openTraining)
@@ -54,6 +55,7 @@ function ElencoSchedeAperte(){
                         <i className="fa fa-arrow-circle-right fs-4 text-success"></i>
                        <div className="d-flex gap-2 w-100 justify-content-between">
                           <div>
+
                             <h5 className="mb-0">{e.title}</h5>
 
                           </div>
