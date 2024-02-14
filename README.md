@@ -1,7 +1,7 @@
 ## Fitness Center FULL STACK Application
-<img src="https://github.com/Andrea-vicari/food-rout/blob/master/WorldFood_GitHub_cover_new.jpg" width="800px">
+<img src="https://github.com/Andrea-vicari/Fitness-Center/blob/master/Fitness_Porfolio_cover.jpg" width="800px">\
 Repo for Fitness Center React Application.\
-**Full Stack MERN** application built with Node, Express, MongoDB and React.\
+**Full STACK** application built with Node, Express, MongoDB and React.\
 Both FrontEnd and Back End deployed on Vercel platform.
 
  ### Demo
