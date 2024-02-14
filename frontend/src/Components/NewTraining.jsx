@@ -206,7 +206,7 @@ const NewTraining = () =>{
             </div>
           </div>
           </div>
-
+          {/** FINE MODALE */}
 
         </div>
       </div>
