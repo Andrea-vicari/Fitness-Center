@@ -25,17 +25,7 @@ function HomeTrainer() {
                   </Link>
 
                 </ul>
-                <hr className="col-3 col-md-2 mb-3"/>
-                <h3 className="text-white">Prenotazioni</h3>
-                <ul className="list-unstyled ps-0">
-                <li>
-                    <a className="icon-link mb-1 text-decoration-none text-white" href="" target="_blank">
-                    <i className="fa fa-calendar fs-4 text-danger"></i>
-                    Clicca e prenota
-                    </a>
-                </li>
 
-                </ul>
             </div>
 
             </div>

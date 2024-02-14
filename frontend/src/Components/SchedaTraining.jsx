@@ -123,14 +123,22 @@ function SchedaTraining(){
                       </div>
                       </li>
                     </ul>
+                    <hr className="col-3 col-md-2 mb-3 w-100 text-danger"/>
+                    <h3 className='text-white'>Eseguita il:</h3>
+                    {e.registered.map((e)=>{
+                  return(
+                    <ul className='list-group'>
+                    <li className='list-group-item'>{e.registered}</li>
+                    </ul>
+                  )})}
+                   <hr className="col-3 col-md-2 mb-3 w-100 text-danger"/>
+                   <h3 className='text-white'>Registra esecuzione:</h3>
 
-
-
-                    <button onClick={(e)=>handleSubmit(e)} className="btn btn-success d-inline-flex align-items-center mb-3" type="button">
+                    <button onClick={(e)=>handleSubmit(e)} className="btn btn-success d-inline-flex align-items-center" type="button">
                     Allenamento Eseguito
                     <i className='fa fa-thumbs-up ms-1'></i>
                     </button>
-
+                    <hr className="col-3 col-md-2 w-100 text-danger"/>
 
                   <Link to="/elencoschedeaperte" className="btn btn-outline-danger d-inline-flex align-items-center px-4" type="button">
                   Torna alla scheda

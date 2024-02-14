@@ -60,8 +60,6 @@ const SingoloUtente = () =>{
     var userTraining = [];
     let terVar = false
 
-    var dede = []
-
 
       data.forEach(element => {
         element._id == userID ? singleUser.push(element) : terVar = true
@@ -83,7 +81,7 @@ const SingoloUtente = () =>{
       {singleUser.map((e)=>{
                     return(
         <div className="bg-dark px-3 pt-3 w-100 text-white" key={e._id}>
-          <h2 className="text-white">Utente: {e.email}</h2>
+          <h2 className="text-white"><span className="text-danger">Utente:</span> {e.email}</h2>
 
             <p className="card-title text-white">Data Iscrizione: {e.createdAt}</p>
             <hr className="col-3 col-md-2 text-white"/>

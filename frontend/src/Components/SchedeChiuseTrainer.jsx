@@ -72,7 +72,7 @@ function SchedeChiuseTrainer(){
                             </div>
                             <div className="card-footer">
                             <small className="card-text mb-0">COMPLETATA:</small><br></br>
-                            <small className="card-text mb-0">{e.today}</small>
+                            <small className="card-text mb-0">{e.dataChiusura}</small>
                             </div>
                         </div>
                     </div>

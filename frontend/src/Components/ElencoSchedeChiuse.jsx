@@ -64,7 +64,7 @@ function ElencoSchedeChiuse(){
                                 <p className="card-text mb-0">RIPOSO: {e.rest}</p>
                             </div>
                             <div className="card-footer">
-                            <small className="card-text mb-0">CHIUSA IL: {e.today}</small>
+                            <small className="card-text mb-0">CHIUSA IL: {e.dataChiusura}</small>
                             </div>
                         </div>
                     </div>
