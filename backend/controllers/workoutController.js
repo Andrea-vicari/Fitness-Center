@@ -31,7 +31,9 @@ const confirmWorkOut = async (req, res)=> {
 
 
     const workout = await Workouts.findOneAndUpdate({"_id":id},{
-        ...req.body
+        $push: {
+            registered: req.body,
+          },
     })
 
     if(!workout){
