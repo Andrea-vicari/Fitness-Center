@@ -1,8 +1,7 @@
-# Fitness Center Application
-Repo for Fitness Center React Application
-Full Stack web application built with Node, Express, MongoDB and React.
+## Fitness Center FULL STACK Application
+Repo for Fitness Center React Application.\
+**Full Stack MERN** application built with Node, Express, MongoDB and React.\
 Both FrontEnd and Back End deployed on Vercel platform.
-
 ## Features
 * MERN Full Stack Project
 * Users registration made with BCrypt and JWT web Token
@@ -11,12 +10,10 @@ Both FrontEnd and Back End deployed on Vercel platform.
 * Trainers can see all users, insert workouts and approve workouts
 * Users can check its workout and register the date of the execution
 * Users can check its past workouts approved by the trainer
-
-
-
-
-### Technologies
+## Technologies
 * Node.js
 * Express
-* Mongoose
 * MongoDB
+* JWT web token
+* React
+* Bootstrap5
