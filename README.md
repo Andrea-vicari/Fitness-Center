@@ -16,6 +16,7 @@ Both FrontEnd and Back End deployed on Vercel platform.
 * Trainers can see all users, insert workouts and approve workouts
 * Users can check its workout and register the date of the execution
 * Users can check its past workouts approved by the trainer
+
 ## Technologies
 * Node.js
 * Express
@@ -23,3 +24,15 @@ Both FrontEnd and Back End deployed on Vercel platform.
 * JWT web token
 * React
 * Bootstrap5
+
+## NodeJS Packages
+* bcryptjs
+* cors
+* dotenv
+* mongoose
+* nodemon
+* cors
+* express
+* jsonwebtoken
+* validator
+
