@@ -47,7 +47,7 @@ const confirmWorkOut = async (req, res)=> {
 // Update a WorkOut
 const updateWorkOut = async (req, res)=> {
 
-    const {status} = req.body
+    const {status, dataChiusura} = req.body
 
     const { id } = req.params;
 
@@ -62,6 +62,8 @@ const updateWorkOut = async (req, res)=> {
     res.status(200).json(workout);
 
 }
+
+
 // Create a NEW workout:
 const createNewWorkOut = async (req, res)=> {
 

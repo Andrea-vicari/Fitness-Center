@@ -36,8 +36,8 @@ function App() {
               <Route path="/schedechiusetrainer/:id" element={user ? <SchedeChiuseTrainer />: <Navigate to="/login"/>} />
               <Route path="/elencoutenti" element={user ? <ElencoUtenti />: <Navigate to="/login"/>} />
               <Route path="/singoloutente/:id" element={user ? <SingoloUtente />: <Navigate to="/login"/>} />
-              <Route path="/allenamento/:id" element={<SchedaTraining />} />
-              <Route path="/allenamento_trainer/:id" element={<SchedaTrainingTrainer />} />
+              <Route path="/allenamento/:id" element={user ?<SchedaTraining />: <Navigate to="/login"/>} />
+              <Route path="/allenamento_trainer/:id" element={user ? <SchedaTrainingTrainer /> : <Navigate to="/elencoutenti"/>} />
               <Route path="/nuovotraining/:id" element={user ?<NewTraining />: <Navigate to="/login"/>} />
               <Route path="/signup" element={<Signup />} />
               <Route path='/login' element={!user ? <Login/> : <Navigate to="/"/>}></Route>
