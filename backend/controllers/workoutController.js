@@ -22,6 +22,25 @@ const getSingleWorkout = async (req, res)=> {
     res.status(200).json(workout);
 }
 
+// Confirm a WorkOut
+const confirmWorkOut = async (req, res)=> {
+
+    const {registered} = req.body
+
+    const { id } = req.params;
+
+
+    const workout = await Workouts.findOneAndUpdate({"_id":id},{
+        ...req.body
+    })
+
+    if(!workout){
+        return res.status(400).json({error: "No WorkOut found"})
+    }
+    res.status(200).json(workout);
+
+}
+
 
 // Update a WorkOut
 const updateWorkOut = async (req, res)=> {
@@ -81,5 +100,5 @@ const deleteWorkout = async (req, res)=> {
 
 
 module.exports = {
-    createNewWorkOut, viewAllWorkouts, getSingleWorkout, deleteWorkout, updateWorkOut
+    createNewWorkOut, viewAllWorkouts, getSingleWorkout, deleteWorkout, updateWorkOut, confirmWorkOut
 }

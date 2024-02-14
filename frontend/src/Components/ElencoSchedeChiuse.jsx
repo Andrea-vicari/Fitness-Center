@@ -42,9 +42,9 @@ function ElencoSchedeChiuse(){
 
 
     return(
-        <div className="container-fluid bg-fitness pt-5">
+        <div className="container-fluid bg-fitness pt-5 mx-auto">
              {user.role == "admin" ? <NavTrainer/> : <Navbar/>}
-            <div className="col-md-6 pb-4">
+            <div className="col-md-6 pb-4 mx-auto">
             <div className="bg-dark p-3 rounded w-100 text-white">
                   <h3 className="text-white">Schede Completate</h3>
                   <hr className="col-3 col-md-2 mb-3"/>
@@ -53,7 +53,7 @@ function ElencoSchedeChiuse(){
                   {closedTraining.map((e)=>{
                       return(
 
-                    <div className="col-6" key={e._id}>
+                    <div className="col-12" key={e._id}>
                         <div className="card mb-3">
                             <div className="card-body">
                                 <h6 className="card-title">{e.title}</h6>

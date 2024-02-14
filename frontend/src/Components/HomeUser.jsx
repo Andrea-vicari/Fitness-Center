@@ -10,7 +10,7 @@ function HomeUser() {
 
 
   return (
-    <div className="col-md-6 pb-4">
+    <div className="col-md-6 pb-4 mx-auto">
             {user.role == "admin" ? <NavTrainer/> : <Navbar/>}
             <div className="bg-dark p-3 w-100 text-white pb-5">
                   <h3 className="text-danger">Scheda Allenamento</h3>

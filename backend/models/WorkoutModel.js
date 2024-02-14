@@ -33,6 +33,11 @@ const workoutsSchema = new mongoose.Schema({
         type: String,
         default:"OPEN",
         required: false
+    },
+    registered:{
+        type: Array,
+        default:[],
+        required: false
     }
 
 

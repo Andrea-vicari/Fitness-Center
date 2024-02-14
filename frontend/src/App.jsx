@@ -40,8 +40,8 @@ function App() {
               <Route path="/allenamento_trainer/:id" element={<SchedaTrainingTrainer />} />
               <Route path="/nuovotraining/:id" element={user ?<NewTraining />: <Navigate to="/login"/>} />
               <Route path="/signup" element={<Signup />} />
-              <Route path='/login' element={<Login/> }></Route>
-              <Route path='*' element={!user ? <Login/> : <Navigate to="/"/>}></Route>
+              <Route path='/login' element={!user ? <Login/> : <Navigate to="/"/>}></Route>
+
           </Routes>
 
         <Footer />

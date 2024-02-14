@@ -46,7 +46,7 @@ function ElencoUtenti (){
         <div className="container-fluid bg-fitness pt-3 pb-3 mt-4">
          {user.role == "admin" ? <NavTrainer/> : <Navbar/>}
 
-          <div className="bg-dark p-3 rounded w-100 text-white">
+          <div className="container bg-dark p-3 rounded w-100 text-white mx-auto">
             <h1 className="text-white">Elenco utenti</h1>
             <hr className="col-3 col-md-2 mb-3 text-white"/>
 

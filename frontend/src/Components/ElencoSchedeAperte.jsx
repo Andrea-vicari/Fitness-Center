@@ -45,8 +45,8 @@ function ElencoSchedeAperte(){
 
         <div className="container-fluid bg-fitness pt-5">
             {user.role == "admin" ? <NavTrainer/> : <Navbar/>}
-            <div className="col-md-6 pb-4">
-            <div className="bg-dark p-3 rounded w-100 text-white">
+            <div className="col-md-6 pb-4 mx-auto">
+            <div className="bg-dark p-3 rounded w-100 text-white mx-auto">
                   <h3 className="text-white">Scheda Allenamento</h3>
                  <div className="list-unstyled">
                   {openTraining.map((e)=>{
