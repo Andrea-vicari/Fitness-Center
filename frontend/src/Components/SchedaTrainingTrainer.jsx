@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import { UseAuthContext } from "../hooks/UseAuthContext"
 import Navbar from "./Common/Navbar";
 import NavTrainer from "./Common/NavTrainer";
+import logo from "./Common/logo_fitness.svg";
 
 function SchedaTrainingTrainer(){
 
@@ -79,8 +80,16 @@ function SchedaTrainingTrainer(){
             setStatus("CHIUSO")
             setDatachiusura(dataChiusura)
             setError(null)
+            openModal()
             console.log('Modificato', json)
           } }
+
+          function closeModal(){
+            document.getElementById('modale_workout').classList.remove("d-block")
+          }
+          function openModal(){
+            document.getElementById('modale_workout').classList.add("d-block")
+          }
 
     return(
         <div className="container-fluid bg-fitness pt-5 mt-4">
@@ -131,7 +140,7 @@ function SchedaTrainingTrainer(){
                   {e.registered.map((e)=>{
                   return(
                     <ul className='list-group'>
-                    <li className='list-group-item'>{e.registered}</li>
+                    <li className='list-group-item mb-3'>{e.registered}</li>
                     </ul>
                   )})}
                   <hr className="col-3 col-md-2 mb-3 w-100 text-danger"/>
@@ -149,6 +158,33 @@ function SchedaTrainingTrainer(){
                 </div>
             </div>
             )})}
+
+            {/** MODALE */}
+          <div className="modal modal-sheet bg-dark px-4 py-md-5" tabIndex="-1" role="dialog" id="modale_workout">
+            <div className="modal-dialog-centered modal-xl bg-dark" role="document">
+              <div className="modal-content rounded-4 shadow bg-dark" >
+                <div className="modal-header d-flex justify-content-between">
+                <img src={logo} className='img-fluid'></img>
+                  <h2 className="modal-title text-white text-center">ALLENAMENTO CHIUSO</h2>
+
+                </div>
+                <div className="modal-body py-3 text-white">
+
+                <h4 className="text-white mt-3 fw-bold">Allenamento chiuso correttamente!</h4>
+                  </div>
+
+                <div className="modal-footer flex-column align-items-stretch w-100 gap-2 pb-3 border-top-0">
+
+                  <div className="modal-footer">
+                    <button type="button" onClick={()=>closeModal()} className="btn btn-danger align-items-center" data-bs-dismiss="modal" aria-label="Close">
+                    <i className='fa fa-times px-2 fs-4'></i>Chiudi
+                      </button>
+                  </div>
+                </div>
+            </div>
+          </div>
+          </div>
+          {/** FINE MODALE */}
 
 
             </div>

@@ -60,7 +60,7 @@ function ElencoUtenti (){
                       <li key={e._id} className="mb-3 list-group-item d-flex justify-content-evenly align-items-start">
                       <div className="ms-2 me-auto">
 
-                        <Link to={`/singoloutente/${e._id}`} state={e._id} className="fs-3 text-danger">{e.email}</Link>
+                        <Link to={`/singoloutente/${e._id}`} state={e._id} className="fs-5 text-danger">{e.email}</Link>
 
                       </div>
                       <Link  to={`/singoloutente/${e._id}`} state={e._id} className="btn btn-small bg-danger py-0 text-white">Click</Link>

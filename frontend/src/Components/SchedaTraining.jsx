@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import { UseAuthContext } from "../hooks/UseAuthContext"
 import Navbar from "./Common/Navbar";
 import NavTrainer from "./Common/NavTrainer";
+import logo from "./Common/logo_fitness.svg";
 
 function SchedaTraining(){
 
@@ -137,7 +138,7 @@ function SchedaTraining(){
                     {e.registered.map((e)=>{
                   return(
                     <ul className='list-group'>
-                    <li className='list-group-item'>{e.registered}</li>
+                    <li className='list-group-item mb-3'>{e.registered}</li>
                     </ul>
                   )})}
                    <hr className="col-3 col-md-2 mb-3 w-100 text-danger"/>
@@ -170,12 +171,12 @@ function SchedaTraining(){
               <div className="modal-content rounded-4 shadow bg-dark" >
                 <div className="modal-header d-flex justify-content-between">
                 <img src={logo} className='img-fluid'></img>
-                  <h2 className="modal-title text-white text-center">WORKOUT AGGIUNTO</h2>
+                  <h2 className="modal-title text-white text-center">ALLENAMENTO REGISTRATO</h2>
 
                 </div>
                 <div className="modal-body py-3 text-white">
 
-                <h4 className="text-white mt-3 fw-bold">Allenamento inserito correttamente!</h4>
+                <h4 className="text-white mt-3 fw-bold">Allenamento registrato correttamente!</h4>
                   </div>
 
                 <div className="modal-footer flex-column align-items-stretch w-100 gap-2 pb-3 border-top-0">
