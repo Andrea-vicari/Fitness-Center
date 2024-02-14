@@ -21,7 +21,6 @@ Both FrontEnd and Back End deployed on Vercel platform.
 * Node.js
 * Express
 * MongoDB
-* JWT web token
 * React
 * Bootstrap5
 
