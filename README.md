@@ -5,9 +5,8 @@ Repo for Fitness Center React Application.\
 Both FrontEnd and Back End deployed on Vercel platform.
 
  ### Demo
- 👉 Video: Trainer add Workout\
- 👉 Video: User complete a Workout\
- 👉 Live Deployment on VERCEL
+ 👉 Video Demo on <a href="https://youtu.be/Gjjc0ujPXWE?feature=shared"> YouTube</a>
+ 👉 Live Deployment <a href="https://fitness-center-client.vercel.app/"> VERCEL</a>
 
 ## Features
 * MERN Full Stack Project
