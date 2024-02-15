@@ -41,6 +41,7 @@ function App() {
               <Route path="/nuovotraining/:id" element={user ?<NewTraining />: <Navigate to="/login"/>} />
               <Route path="/signup" element={<Signup />} />
               <Route path='/login' element={!user ? <Login/> : <Navigate to="/"/>}></Route>
+              <Route path="*" element={<Home />} />
 
           </Routes>
 
