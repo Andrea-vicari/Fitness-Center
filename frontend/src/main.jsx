@@ -7,11 +7,13 @@ import {
 import "./index.css";
 import { AuthContextProvider } from './context/AuthContext.jsx';
 import Root from "./routes/root";
+import ErrorPage from "./errorpage.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+    errorElement: <ErrorPage />,
   },
 ]);
 
