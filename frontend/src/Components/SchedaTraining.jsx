@@ -141,6 +141,10 @@ function SchedaTraining(){
                       </div>
                       </li>
                     </ul>
+                    <button onClick={()=>openCrono()} className="btn btn-outline-danger d-inline-flex align-items-center px-4" type="button">
+                        Cronometro
+                        <i className='fa fa-clock fs-1 ms-1'></i>
+                    </button>
                     <hr className="col-3 col-md-2 mb-3 w-100 text-danger"/>
                     <h3 className='text-white'>Eseguita il:</h3>
                     {e.registered.map((e)=>{
