@@ -1,4 +1,5 @@
 import React from 'react'
+import logo from "./Common/logo_fitness.svg";
 
 function Cronometro() {
   return (
