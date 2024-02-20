@@ -2,6 +2,11 @@ import React from 'react'
 import logo from "./Common/logo_fitness.svg";
 
 function Cronometro() {
+
+    function closeCrono(){
+        document.getElementById('cronometro').classList.remove("d-block")
+      }
+
   return (
 
               <div className="modal modal-sheet bg-dark px-4 py-md-5" tabIndex="-1" role="dialog" id="cronometro">
