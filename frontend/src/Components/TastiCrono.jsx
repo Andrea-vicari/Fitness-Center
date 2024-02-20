@@ -3,18 +3,18 @@ import React from 'react'
 function TastiCrono(props) {
 
   const StartButton = (
-    <div className="btn btn-one btn-start"
+    <div className="btn btn-one btn-success"
         onClick={props.handleStart}>
         Start
     </div>
   );
   const ActiveButtons = (
       <div className="btn-grp">
-          <div className="btn btn-two"
+          <div className="btn btn-danger btn-two"
               onClick={props.handleReset}>
               Reset
           </div>
-          <div className="btn btn-one"
+          <div className="btn btn-one btn-info"
               onClick={props.handlePauseResume}>
               {props.isPaused ? "Resume" : "Pause"}
           </div>
