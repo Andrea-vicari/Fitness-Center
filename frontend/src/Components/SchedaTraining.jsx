@@ -88,6 +88,13 @@ function SchedaTraining(){
       document.getElementById('modale_workout').classList.add("d-block")
     }
 
+    function closeCrono(){
+      document.getElementById('cronometro').classList.remove("d-block")
+    }
+    function openCrono(){
+      document.getElementById('cronometro').classList.add("d-block")
+    }
+
 
     return(
 

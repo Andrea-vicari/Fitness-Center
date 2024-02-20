@@ -3,14 +3,13 @@ import logo from "./Common/logo_fitness.svg";
 
 function Cronometro() {
   return (
-    <div className="d-flex justify-content-center align-items-center py-5">
-        <div className="bg-dark p-3 rounded w-100 text-white">
+
               <div className="modal modal-sheet bg-dark px-4 py-md-5" tabIndex="-1" role="dialog" id="cronometro">
               <div className="modal-dialog-centered modal-xl bg-dark" role="document">
                 <div className="modal-content rounded-4 shadow bg-dark" >
                   <div className="modal-header d-flex justify-content-between">
                   <img src={logo} className='img-fluid'></img>
-                    <h2 className="modal-title text-white text-center">WORKOUT AGGIUNTO</h2>
+                    <h2 className="modal-title text-white text-center">CRONOMETRO</h2>
 
                   </div>
                   <div className="modal-body py-3 text-white">
@@ -21,7 +20,7 @@ function Cronometro() {
                   <div className="modal-footer flex-column align-items-stretch w-100 gap-2 pb-3 border-top-0">
 
                     <div className="modal-footer">
-                      <button type="button" onClick={()=>closeModal()} className="btn btn-danger align-items-center" data-bs-dismiss="modal" aria-label="Close">
+                      <button type="button" onClick={()=>closeCrono()} className="btn btn-danger align-items-center" data-bs-dismiss="modal" aria-label="Close">
                       <i className='fa fa-times px-2 fs-4'></i>Chiudi
                         </button>
                     </div>
@@ -29,8 +28,7 @@ function Cronometro() {
               </div>
             </div>
             </div>
-        </div>
-    </div>
+
   )
 }
 
