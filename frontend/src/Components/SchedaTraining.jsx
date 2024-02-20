@@ -4,6 +4,7 @@ import { UseAuthContext } from "../hooks/UseAuthContext"
 import Navbar from "./Common/Navbar";
 import NavTrainer from "./Common/NavTrainer";
 import logo from "./Common/logo_fitness.svg";
+import Cronometro from './Cronometro';
 
 function SchedaTraining(){
 
@@ -191,6 +192,8 @@ function SchedaTraining(){
           </div>
           </div>
           {/** FINE MODALE */}
+
+          <Cronometro />
 
 
 
