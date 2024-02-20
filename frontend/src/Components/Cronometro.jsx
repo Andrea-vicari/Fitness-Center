@@ -4,7 +4,7 @@ function Cronometro() {
   return (
     <div className="d-flex justify-content-center align-items-center py-5">
         <div className="bg-dark p-3 rounded w-100 text-white">
-              <div className="modal modal-sheet bg-dark px-4 py-md-5" tabIndex="-1" role="dialog" id="modale_workout">
+              <div className="modal modal-sheet bg-dark px-4 py-md-5" tabIndex="-1" role="dialog" id="cronometro">
               <div className="modal-dialog-centered modal-xl bg-dark" role="document">
                 <div className="modal-content rounded-4 shadow bg-dark" >
                   <div className="modal-header d-flex justify-content-between">
