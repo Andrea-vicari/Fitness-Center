@@ -18,7 +18,7 @@ function Cronometro() {
                   <div className="modal-header d-flex justify-content-between">
                   <img src={logo} width="50"></img>
                     <h2 className="modal-title text-white">CRONOMETRO</h2>
-                    <button type="button" onClick={()=>closeCrono()} className="btn btn-danger align-items-center" data-bs-dismiss="modal" aria-label="Close"/>
+                    <i className='fa fa-times px-2 fs-4' onClick={()=>closeCrono()}></i>Chiudi
 
                   </div>
                   <Timer />
