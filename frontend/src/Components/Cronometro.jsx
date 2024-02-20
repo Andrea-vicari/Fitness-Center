@@ -13,8 +13,8 @@ function Cronometro() {
               <div className="modal-dialog-centered modal-xl bg-dark" role="document">
                 <div className="modal-content rounded-4 shadow bg-dark" >
                   <div className="modal-header d-flex justify-content-between">
-                  <img src={logo} width="25"></img>
-                    <h2 className="modal-title text-white text-center">CRONOMETRO</h2>
+                  <img src={logo} width="50"></img>
+                    <h2 className="modal-title text-white">CRONOMETRO</h2>
 
                   </div>
                   <Timer />
