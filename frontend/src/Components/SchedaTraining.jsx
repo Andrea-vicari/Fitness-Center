@@ -177,7 +177,7 @@ function SchedaTraining(){
 
           {/** MODALE */}
           <div className="modal modal-sheet bg-dark px-4 py-md-5" tabIndex="-1" role="dialog" id="modale_workout">
-            <div className="modal-dialog-centered modal-xl bg-dark" role="document">
+            <div className="modal-dialog-centered large-modal bg-dark" role="document">
               <div className="modal-content rounded-4 shadow bg-dark" >
                 <div className="modal-header d-flex justify-content-between">
                 <img src={logo} className='img-fluid'></img>

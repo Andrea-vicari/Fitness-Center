@@ -15,6 +15,7 @@ function Cronometro() {
                   <div className="modal-header d-flex justify-content-between">
                   <img src={logo} width="50"></img>
                     <h2 className="modal-title text-white">CRONOMETRO</h2>
+                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 
                   </div>
                   <Timer />
