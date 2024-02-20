@@ -2,12 +2,46 @@ import React from 'react'
 import logo from "./Common/logo_fitness.svg";
 import Timer from './Timer';
 import TastiCrono from './TastiCrono';
+import { useState, useEffect } from 'react';
 
 function Cronometro() {
 
   function closeCrono(){
     document.getElementById('cronometro').classList.remove("d-block")
   }
+
+  const [isActive, setIsActive] = useState(false);
+    const [isPaused, setIsPaused] = useState(true);
+    const [time, setTime] = useState(0);
+
+    React.useEffect(() => {
+        let interval = null;
+
+        if (isActive && isPaused === false) {
+            interval = setInterval(() => {
+                setTime((time) => time + 10);
+            }, 10);
+        } else {
+            clearInterval(interval);
+        }
+        return () => {
+            clearInterval(interval);
+        };
+    }, [isActive, isPaused]);
+
+    const handleStart = () => {
+        setIsActive(true);
+        setIsPaused(false);
+    };
+
+    const handlePauseResume = () => {
+        setIsPaused(!isPaused);
+    };
+
+    const handleReset = () => {
+        setIsActive(false);
+        setTime(0);
+    };
 
 
   return (
@@ -21,8 +55,12 @@ function Cronometro() {
                     <i className='fa fa-times px-2 fs-4 text-danger' onClick={()=>closeCrono()}></i>Chiudi
 
                   </div>
-                  <Timer />
-                  <TastiCrono />
+                  <Timer time={time} />
+                  <TastiCrono active={isActive}
+                isPaused={isPaused}
+                handleStart={handleStart}
+                handlePauseResume={handlePauseResume}
+                handleReset={handleReset}/>
 
               </div>
             </div>
