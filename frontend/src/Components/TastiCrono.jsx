@@ -16,7 +16,7 @@ function TastiCrono(props) {
           </div>
           <div className="btn btn-one btn-info"
               onClick={props.handlePauseResume}>
-              {props.isPaused ? "Resume" : "Pause"}
+              {props.isPaused ? "Riavvia" : "Pausa"}
           </div>
       </div>
   );
@@ -24,7 +24,7 @@ function TastiCrono(props) {
 
 
   return (
-    <div className="modal-footer flex-column align-items-stretch w-100 gap-2 pb-3 border-top-0">
+    <div className="modal-footer flex-column align-items-stretch w-100 gap-2 pb-3 border-top-1">
       <div>{props.active ? ActiveButtons : StartButton}</div>
     </div>
   )
