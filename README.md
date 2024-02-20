@@ -9,14 +9,14 @@ Both FrontEnd and Back End deployed on Vercel platform.
  👉 Live Deployment <a href="https://fitness-center-client.vercel.app/" target="_blank" > VERCEL</a>
 
 ### User-Test
-👇
-userdemo@fitnessreact.it
-D3moUser!
+Use below credentials to log-in as a user (Some workouts are available)
+👉 userdemo@fitnessreact.it
+👉 D3moUser!
 
 ### Trainer-Test
-👇
-trainerDemo@fitnessreact.it
-D3moTrainer!
+Use below credentials to log-in as a trainer
+👉 trainerDemo@fitnessreact.it
+👉 D3moTrainer!
 
 ## Features
 * MERN Full Stack Project
