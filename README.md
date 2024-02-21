@@ -21,7 +21,6 @@ Use below credentials to log-in as a trainer\
 ## Features
 * MERN Full Stack Project
 * Users registration made with BCrypt and JWT web Token
-* Thanks to Token, user stay connected even the app is closed
 * Server built with Node.js and Express.js, Mongoose and MongoDB as database
 * A ristricted list of users have the "TRAINER" role
 * Trainers can see all users, insert workouts and approve workouts
