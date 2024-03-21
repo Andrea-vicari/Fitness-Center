@@ -17,7 +17,6 @@ app.use(cors(
     }
 ));
 
-
 mongoose.connect(process.env.MONGODB_URI)
     .then(()=>{
         app.listen(process.env.PORT, () => console.log(`Connected to DB and Listening on port ${process.env.PORT}`));
