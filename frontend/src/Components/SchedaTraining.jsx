@@ -21,7 +21,7 @@ function SchedaTraining(){
 
     const makeAPICall = async () => {
         try {
-          const response = await fetch(`https://fitness-center-khaki.vercel.app/api/workouts/${user.user_id}`, {mode:'cors'});
+          const response = await fetch(`https://fitness-center-nu.vercel.app/api/workouts/${user.user_id}`, {mode:'cors'});
           const data = await response.json();
           setData(data)
 
@@ -57,7 +57,7 @@ function SchedaTraining(){
 
         const workout = {registered}
 
-        const response = await fetch(`https://fitness-center-khaki.vercel.app/api/workouts/close/${title}`, {
+        const response = await fetch(`https://fitness-center-nu.vercel.app/api/workouts/close/${title}`, {
 
             method: 'PATCH',
             body: JSON.stringify(workout),

@@ -39,7 +39,7 @@ const NewTraining = () =>{
         openModal()
         const workout = {today, user, title, series, reps, rest, loads}
 
-        const response = await fetch('https://fitness-center-khaki.vercel.app/api/workouts', {
+        const response = await fetch('https://fitness-center-nu.vercel.app/api/workouts', {
 
             method: 'POST',
             body: JSON.stringify(workout),

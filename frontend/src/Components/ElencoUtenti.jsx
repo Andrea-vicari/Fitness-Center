@@ -13,7 +13,7 @@ function ElencoUtenti (){
 
     const makeAPICall = async () => {
         try {
-          const response = await fetch('https://fitness-center-khaki.vercel.app/api/users', {mode:'cors'});
+          const response = await fetch('https://fitness-center-nu.vercel.app/api/users', {mode:'cors'});
           const data = await response.json();
           setData(data)
 
