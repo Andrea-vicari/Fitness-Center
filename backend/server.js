@@ -11,7 +11,7 @@ app.use(cors(
     {
         // Use this in production (DO NOT PUT FINAL SLASH!!) //
         // "https://fitness-center-client.vercel.app"
-        origin: ["https://fitness-center-client.vercel.app"],
+        origin: ["https://fitness-center-j7uo.vercel.app"],
         methods: ["POST", "GET", "PUT", "PATCH"],
         credentials: true
     }
