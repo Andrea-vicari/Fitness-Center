@@ -6,7 +6,7 @@ Both FrontEnd and Back End deployed on Vercel platform.
 
  ### Demo
  👉 Video Demo on <a href="https://youtu.be/Gjjc0ujPXWE?feature=shared" target="_blank" > YouTube</a>\
- 👉 Live Deployment <a href="https://fitness-center-client.vercel.app/" target="_blank" > VERCEL</a>
+ 👉 Live Deployment <a href="https://fitness-center-j7uo.vercel.app/" target="_blank" > VERCEL</a>
 
 ### User-Test
 Use below credentials to log-in as a user (Some workouts are available)\
