@@ -42,7 +42,7 @@ const loginUser = async (req, res)=> {
         const token = createToken(user._id)
         const user_id = user._id
 
-        let role
+        var role
 
         switch(user_id){
             case "65fd7f011f29fdfe6439c464" : role = "admin"
