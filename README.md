@@ -15,8 +15,8 @@ Use below credentials to log-in as a user (Some workouts are available)\
 
 ### Trainer-Test
 Use below credentials to log-in as a trainer\
-👉 trainerDemo@fitnessreact.it\
-👉 D3moTrainer!
+👉 andrea.vicari77@gmail.com\
+👉 Init_1234
 
 ## Features
 * MERN Full Stack Project
