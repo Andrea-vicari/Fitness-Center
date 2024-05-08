@@ -49,6 +49,7 @@ const loginUser = async (req, res)=> {
             break
             case "65d4dadd2e611b2cc0842232" : role = "admin"
             break
+            default : role = "user"
 
         }
 
